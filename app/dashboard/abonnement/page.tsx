@@ -31,19 +31,21 @@ export default async function AbonnementPage() {
   const trialEnd = profile?.trial_ends_at ? new Date(profile.trial_ends_at) : null;
   const daysLeft = trialEnd ? Math.max(0, Math.ceil((trialEnd.getTime() - Date.now()) / 86400000)) : null;
 
-  const statusLabel = {
+  const statusLabels: Record<string, string> = {
     trialing: "Essai gratuit",
     active: "Actif",
     canceled: "Annulé",
     past_due: "Paiement en retard",
-  }[status || "trialing"] || "Inconnu";
+  };
+  const statusLabel = statusLabels[status || "trialing"] || "Inconnu";
 
-  const statusColor = {
+  const statusColors: Record<string, string> = {
     trialing: "#F59E0B",
     active: "#22C55E",
     canceled: "#EF4444",
     past_due: "#EF4444",
-  }[status || "trialing"] || "var(--text-3)";
+  };
+  const statusColor = statusColors[status || "trialing"] || "var(--text-3)";
 
   const currentPlan = PLANS.find((p) => p.slug === plan) || PLANS[0];
 
