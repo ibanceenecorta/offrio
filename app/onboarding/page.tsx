@@ -183,8 +183,9 @@ export default function OnboardingPage() {
           }))
         );
       }
-    } catch {
-      // Silently continue if DB update fails
+    } catch (err) {
+      console.error("Onboarding save error:", err);
+      toast.error("Erreur lors de la sauvegarde. Réessaie.");
     }
   };
 
@@ -378,7 +379,7 @@ export default function OnboardingPage() {
                   <div className="flex items-center gap-4">
                     <input
                       type="range"
-                      min={5000}
+                      min={0}
                       max={500000}
                       step={5000}
                       value={step2.montant_min}
@@ -391,7 +392,7 @@ export default function OnboardingPage() {
                     </span>
                   </div>
                   <div className="flex justify-between text-xs mt-1" style={{ color: "var(--text-3)" }}>
-                    <span>5 000 €</span><span>500 000 €</span>
+                    <span>0 €</span><span>500 000 €</span>
                   </div>
                 </div>
               </div>

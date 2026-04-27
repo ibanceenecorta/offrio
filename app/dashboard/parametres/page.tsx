@@ -212,7 +212,7 @@ export default function ParametresPage() {
             </label>
             <input
               type="range"
-              min={5000}
+              min={0}
               max={500000}
               step={5000}
               value={profile.montant_min_marche}

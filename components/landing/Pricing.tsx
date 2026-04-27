@@ -7,8 +7,7 @@ const plans = [
     slug: "starter",
     desc: "Pour l'artisan solo qui veut commencer",
     features: [
-      "1 utilisateur",
-      "10 AOs / jour",
+      "2 AOs / jour",
       "Source BOAMP",
       "Résumés IA",
       "Alertes email quotidiennes",
@@ -21,11 +20,9 @@ const plans = [
     slug: "pro",
     desc: "Pour les PME de 5 à 30 salariés",
     features: [
-      "5 utilisateurs",
-      "30 AOs / jour",
+      "5 AOs / jour",
       "3 sources d'AOs",
       "Scoring IA avancé",
-      "Drafts email IA",
       "Profil personnalisé",
     ],
     highlight: true,
@@ -36,10 +33,8 @@ const plans = [
     slug: "scale",
     desc: "Pour les entreprises de 30 à 100 salariés",
     features: [
-      "Utilisateurs illimités",
       "AOs illimités",
       "Sources illimitées",
-      "Multi-utilisateurs",
       "Support prioritaire",
       "Onboarding dédié",
     ],
