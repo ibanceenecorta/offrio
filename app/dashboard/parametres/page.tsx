@@ -13,7 +13,7 @@ const SECTEURS = [
 export default function ParametresPage() {
   const [profile, setProfile] = useState({
     prenom: "", nom: "", entreprise_nom: "", zone_geo: "",
-    email_frequence: "quotidien", montant_min_marche: 20000,
+    email_frequence: "quotidien", montant_min_marche: 0,
   });
   const [secteurs, setSecteurs] = useState<string[]>([]);
   const [motsCles, setMotsCles] = useState("");
@@ -32,7 +32,7 @@ export default function ParametresPage() {
       entreprise_nom: p.entreprise_nom || "",
       zone_geo: p.zone_geo || "",
       email_frequence: p.email_frequence || "quotidien",
-      montant_min_marche: p.montant_min_marche || 20000,
+      montant_min_marche: p.montant_min_marche ?? 0,
     });
 
     const { data: s } = await supabase.from("user_secteurs").select("secteur, mots_cles").eq("user_id", user.id);

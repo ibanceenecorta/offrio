@@ -67,9 +67,9 @@ export default function Features() {
                     <div className="t-dot" style={{ background: "#28C840" }} />
                     <span className="text-xs ml-2" style={{ color: "#8B949E" }}>offrio-cli</span>
                   </div>
-                  <div className="terminal-body">
-                    <div className="t-dim">{s.cmd}</div>
-                    <div className="t-green mt-1">{s.output}</div>
+                  <div className="terminal-body overflow-x-auto">
+                    <div className="t-dim whitespace-nowrap">{s.cmd}</div>
+                    <div className="t-green mt-1 whitespace-nowrap">{s.output}</div>
                   </div>
                 </div>
               </div>

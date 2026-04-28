@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
 
@@ -72,9 +73,13 @@ const nav = [
   },
 ];
 
+// Bottom nav shows only the 5 most important items on mobile
+const mobileNav = nav.slice(0, 5);
+
 export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href: string, exact?: boolean) => {
     if (exact) return pathname === href;
@@ -89,59 +94,172 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
   };
 
   return (
-    <aside
-      className="fixed left-0 top-0 h-screen flex flex-col z-40"
-      style={{
-        width: "224px",
-        background: "rgba(15,23,42,0.97)",
-        borderRight: "1px solid var(--border-2)",
-        backdropFilter: "blur(20px)",
-      }}
-    >
-      {/* Logo */}
-      <div className="px-5 py-5" style={{ borderBottom: "1px solid var(--border)" }}>
-        <Link href="/dashboard" className="font-heading text-xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+    <>
+      {/* Desktop sidebar */}
+      <aside
+        className="fixed left-0 top-0 h-screen flex-col z-40 hidden md:flex"
+        style={{
+          width: "224px",
+          background: "rgba(15,23,42,0.97)",
+          borderRight: "1px solid var(--border-2)",
+          backdropFilter: "blur(20px)",
+        }}
+      >
+        <div className="px-5 py-5" style={{ borderBottom: "1px solid var(--border)" }}>
+          <Link href="/dashboard" className="font-heading text-xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+            OFFRIO
+          </Link>
+        </div>
+
+        <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`nav-link${isActive(item.href, item.exact) ? " active" : ""}`}
+            >
+              {item.icon}
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="px-4 py-4" style={{ borderTop: "1px solid var(--border)" }}>
+          {userEmail && (
+            <div className="mb-3">
+              <p className="text-xs font-medium truncate" style={{ color: "#F1F5F9" }}>{userEmail}</p>
+              {plan && (
+                <span className="badge badge-blue mt-1 text-xs">{plan}</span>
+              )}
+            </div>
+          )}
+          <button
+            onClick={handleLogout}
+            className="w-full text-left text-xs flex items-center gap-2 transition-colors"
+            style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-3)", padding: "4px 0" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--danger)")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-3)")}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/>
+            </svg>
+            Déconnexion
+          </button>
+        </div>
+      </aside>
+
+      {/* Mobile top bar */}
+      <div
+        className="fixed top-0 left-0 right-0 z-40 flex md:hidden items-center justify-between px-4"
+        style={{
+          height: "56px",
+          background: "rgba(15,23,42,0.97)",
+          borderBottom: "1px solid var(--border-2)",
+          backdropFilter: "blur(20px)",
+        }}
+      >
+        <Link href="/dashboard" className="font-heading text-lg" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
           OFFRIO
         </Link>
-      </div>
-
-      {/* Nav */}
-      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
-        {nav.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`nav-link${isActive(item.href, item.exact) ? " active" : ""}`}
-          >
-            {item.icon}
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-
-      {/* User info */}
-      <div className="px-4 py-4" style={{ borderTop: "1px solid var(--border)" }}>
-        {userEmail && (
-          <div className="mb-3">
-            <p className="text-xs font-medium truncate" style={{ color: "#F1F5F9" }}>{userEmail}</p>
-            {plan && (
-              <span className="badge badge-blue mt-1 text-xs">{plan}</span>
-            )}
-          </div>
-        )}
         <button
-          onClick={handleLogout}
-          className="w-full text-left text-xs flex items-center gap-2 transition-colors"
-          style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-3)", padding: "4px 0" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--danger)")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-3)")}
+          onClick={() => setMenuOpen(!menuOpen)}
+          style={{ background: "none", border: "none", cursor: "pointer", color: "#F1F5F9", padding: "8px" }}
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/>
-          </svg>
-          Déconnexion
+          {menuOpen ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          )}
         </button>
       </div>
-    </aside>
+
+      {/* Mobile drawer menu */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-50 md:hidden"
+          onClick={() => setMenuOpen(false)}
+        >
+          <div
+            className="absolute top-0 left-0 h-full w-72 flex flex-col"
+            style={{
+              background: "rgba(15,23,42,0.99)",
+              borderRight: "1px solid var(--border-2)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="px-5 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid var(--border)" }}>
+              <span className="font-heading text-xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>OFFRIO</span>
+              <button onClick={() => setMenuOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-3)" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+              {nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`nav-link${isActive(item.href, item.exact) ? " active" : ""}`}
+                >
+                  {item.icon}
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="px-4 py-4" style={{ borderTop: "1px solid var(--border)" }}>
+              {userEmail && (
+                <div className="mb-3">
+                  <p className="text-xs font-medium truncate" style={{ color: "#F1F5F9" }}>{userEmail}</p>
+                  {plan && <span className="badge badge-blue mt-1 text-xs">{plan}</span>}
+                </div>
+              )}
+              <button
+                onClick={handleLogout}
+                className="w-full text-left text-xs flex items-center gap-2"
+                style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-3)", padding: "4px 0" }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+                Déconnexion
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile bottom nav */}
+      <nav
+        className="fixed bottom-0 left-0 right-0 z-40 flex md:hidden"
+        style={{
+          background: "rgba(15,23,42,0.97)",
+          borderTop: "1px solid var(--border-2)",
+          backdropFilter: "blur(20px)",
+        }}
+      >
+        {mobileNav.map((item) => {
+          const active = isActive(item.href, item.exact);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex-1 flex flex-col items-center justify-center py-2 gap-1"
+              style={{ color: active ? "var(--accent)" : "var(--text-3)" }}
+            >
+              {item.icon}
+              <span style={{ fontSize: "10px", fontWeight: active ? 600 : 400 }}>{item.label.split(" ")[0]}</span>
+            </Link>
+          );
+        })}
+      </nav>
+    </>
   );
 }

@@ -144,7 +144,7 @@ export default function OnboardingPage() {
   const [loading, setLoading] = useState(false);
 
   const [step1, setStep1] = useState<Step1>({ entreprise: "", taille: "1", departement: "", siret: "" });
-  const [step2, setStep2] = useState<Step2>({ secteurs: [], mots_cles: "", montant_min: 20000 });
+  const [step2, setStep2] = useState<Step2>({ secteurs: [], mots_cles: "", montant_min: 0 });
   const [step3, setStep3] = useState<Step3>({ plan: "pro" });
 
   const progress = (step / 3) * 100;

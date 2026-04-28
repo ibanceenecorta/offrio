@@ -69,7 +69,6 @@ export default function Pricing() {
                   ? {
                       background: "rgba(37,99,235,0.08)",
                       borderColor: "rgba(37,99,235,0.4)",
-                      transform: "scale(1.03)",
                       boxShadow: "0 0 40px rgba(37,99,235,0.18)",
                     }
                   : {}),

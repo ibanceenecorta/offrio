@@ -18,8 +18,8 @@ export default async function DashboardLayout({ children }: { children: React.Re
     <div className="min-h-screen" style={{ background: "var(--bg)" }}>
       <Sidebar userEmail={user.email} plan={profile?.plan} />
       <main
-        className="min-h-screen"
-        style={{ marginLeft: "224px", padding: "32px" }}
+        className="min-h-screen md:ml-[224px] ml-0 pt-[56px] md:pt-0 pb-[64px] md:pb-0"
+        style={{ padding: "32px 16px" }}
       >
         {children}
       </main>
