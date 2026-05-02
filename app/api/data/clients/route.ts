@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
 
   const { data: users, error } = await supabase
     .from("users")
-    .select("id, email, prenom, nom, entreprise_nom, entreprise_taille, zone_geo, secteur_principal, plan, subscription_status, montant_min_marche, telephone, certifications, types_marches")
+    .select("id, email, prenom, nom, entreprise_nom, entreprise_taille, zone_geo, secteur_principal, plan, subscription_status, montant_min_marche, telephone, certifications, types_marches, email_frequence, onboarding_complete, trial_ends_at")
     .in("subscription_status", ["trialing", "active"]);
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
