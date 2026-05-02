@@ -258,7 +258,7 @@ export default function OnboardingPage() {
           </div>
         </div>
 
-        <div className="glass grad-border p-8">
+        <div className="glass grad-border p-4 sm:p-8">
           {/* Step 1 */}
           {step === 1 && (
             <div className="anim-fadeUp">

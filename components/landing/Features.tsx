@@ -68,8 +68,8 @@ export default function Features() {
                     <span className="text-xs ml-2" style={{ color: "#8B949E" }}>offrio-cli</span>
                   </div>
                   <div className="terminal-body overflow-x-auto">
-                    <div className="t-dim whitespace-nowrap">{s.cmd}</div>
-                    <div className="t-green mt-1 whitespace-nowrap">{s.output}</div>
+                    <div className="t-dim break-all sm:whitespace-nowrap">{s.cmd}</div>
+                    <div className="t-green mt-1 break-all sm:whitespace-nowrap">{s.output}</div>
                   </div>
                 </div>
               </div>

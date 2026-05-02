@@ -132,10 +132,10 @@ export default async function DashboardPage() {
               <thead>
                 <tr>
                   <th>Titre</th>
-                  <th>Secteur</th>
+                  <th className="hidden sm:table-cell">Secteur</th>
                   <th>Score IA</th>
-                  <th>Date limite</th>
-                  <th>Statut</th>
+                  <th className="hidden md:table-cell">Date limite</th>
+                  <th className="hidden sm:table-cell">Statut</th>
                 </tr>
               </thead>
               <tbody>
@@ -152,7 +152,7 @@ export default async function DashboardPage() {
                             : (ao.titre as string)}
                         </span>
                       </td>
-                      <td>
+                      <td className="hidden sm:table-cell">
                         <span className="badge badge-gray">{ao.secteur as string}</span>
                       </td>
                       <td>
@@ -162,14 +162,14 @@ export default async function DashboardPage() {
                           <span style={{ color: "var(--text-3)" }}>—</span>
                         )}
                       </td>
-                      <td>
+                      <td className="hidden md:table-cell">
                         <span className="text-sm" style={{ color: "var(--text-2)" }}>
                           {ao.date_limite
                             ? new Date(ao.date_limite as string).toLocaleDateString("fr-FR")
                             : "—"}
                         </span>
                       </td>
-                      <td>
+                      <td className="hidden sm:table-cell">
                         <span className={`badge ${
                           row.statut === "nouveau" ? "badge-blue" :
                           row.statut === "interessant" ? "badge-green" :

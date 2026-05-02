@@ -101,7 +101,7 @@ function RegisterForm() {
         {/* Card */}
         <div className="glass grad-border p-8">
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
-            <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: "var(--text-3)" }}>
                   Prénom

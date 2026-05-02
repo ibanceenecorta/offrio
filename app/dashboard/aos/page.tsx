@@ -121,10 +121,10 @@ export default function AOsPage() {
               <thead>
                 <tr>
                   <th>Titre</th>
-                  <th>Secteur</th>
+                  <th className="hidden sm:table-cell">Secteur</th>
                   <th>Score IA</th>
-                  <th>Date limite</th>
-                  <th>Statut</th>
+                  <th className="hidden md:table-cell">Date limite</th>
+                  <th className="hidden sm:table-cell">Statut</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -135,21 +135,28 @@ export default function AOsPage() {
                     <tr key={row.id} style={{ cursor: "pointer" }} onClick={() => setSelected(row)}>
                       <td>
                         <span className="font-medium text-sm" style={{ color: "#F1F5F9" }}>
-                          {ao?.titre?.length > 55 ? ao.titre.slice(0, 55) + "…" : ao?.titre}
+                          {ao?.titre?.length > 40 ? ao.titre.slice(0, 40) + "…" : ao?.titre}
                         </span>
+                        <div className="sm:hidden mt-1">
+                          <span className={`badge ${
+                            row.statut === "nouveau" ? "badge-blue" :
+                            row.statut === "interessant" ? "badge-green" :
+                            row.statut === "ignore" ? "badge-red" : "badge-gray"
+                          }`}>{row.statut}</span>
+                        </div>
                       </td>
-                      <td><span className="badge badge-gray">{ao?.secteur}</span></td>
+                      <td className="hidden sm:table-cell"><span className="badge badge-gray">{ao?.secteur}</span></td>
                       <td>
                         {ao?.score_ia != null ? (
                           <span className={scoreClass(ao.score_ia)}>{ao.score_ia}/100</span>
                         ) : "—"}
                       </td>
-                      <td>
+                      <td className="hidden md:table-cell">
                         <span className="text-sm" style={{ color: "var(--text-2)" }}>
                           {ao?.date_limite ? new Date(ao.date_limite).toLocaleDateString("fr-FR") : "—"}
                         </span>
                       </td>
-                      <td onClick={(e) => e.stopPropagation()}>
+                      <td className="hidden sm:table-cell" onClick={(e) => e.stopPropagation()}>
                         <span className={`badge ${
                           row.statut === "nouveau" ? "badge-blue" :
                           row.statut === "interessant" ? "badge-green" :
@@ -193,8 +200,7 @@ export default function AOsPage() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="glass grad-border w-full max-w-2xl max-h-[85vh] overflow-y-auto"
-            style={{ padding: "32px" }}
+            className="glass grad-border w-full max-w-2xl max-h-[85vh] overflow-y-auto p-4 sm:p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4 mb-5">
