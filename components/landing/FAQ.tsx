@@ -34,7 +34,7 @@ export default function FAQ() {
         <div className="divider mb-20" />
 
         <div className="text-center mb-16 reveal">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" className="text-gradient-accent">
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             FAQ
           </p>
           <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
