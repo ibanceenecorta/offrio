@@ -36,10 +36,10 @@ export default function Features() {
         <div className="divider mb-20" />
 
         <div className="text-center mb-16 reveal">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--accent)" }}>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Comment ça marche
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
             4 ÉTAPES, ZÉRO EFFORT
           </h2>
         </div>
@@ -50,12 +50,12 @@ export default function Features() {
               <div className="glass grad-border glass-hover p-6 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <span
-                    className="font-heading text-3xl"
-                    style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+                    className="font-heading text-3xl text-gradient-accent"
+                    style={{ letterSpacing: "0.05em" }}
                   >
                     {s.step}
                   </span>
-                  <h3 className="font-bold text-base" style={{ color: "#F1F5F9" }}>{s.title}</h3>
+                  <h3 className="font-bold text-base" style={{ color: "#F0F4FF" }}>{s.title}</h3>
                 </div>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--text-2)" }}>
                   {s.desc}

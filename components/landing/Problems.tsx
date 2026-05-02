@@ -23,10 +23,10 @@ export default function Problems() {
         <div className="divider mb-20" />
 
         <div className="text-center mb-14 reveal">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--accent)" }}>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Le problème
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
             LA RÉALITÉ DU TERRAIN
           </h2>
         </div>
@@ -40,11 +40,11 @@ export default function Problems() {
             >
               <div
                 className="text-3xl mb-5 w-14 h-14 rounded-xl flex items-center justify-center"
-                style={{ background: "rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.15)" }}
+                style={{ background: "rgba(79,110,247,0.08)", border: "1px solid rgba(79,110,247,0.15)" }}
               >
                 {p.icon}
               </div>
-              <h3 className="text-lg font-bold mb-3" style={{ color: "#F1F5F9" }}>
+              <h3 className="text-lg font-bold mb-3" style={{ color: "#F0F4FF" }}>
                 {p.title}
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-2)" }}>
