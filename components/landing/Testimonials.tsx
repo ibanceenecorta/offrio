@@ -19,7 +19,7 @@ const testimonials = [
     name: "Karim Benhaddou",
     role: "Directeur · BK Plomberie Chauffage · Île-de-France",
     content:
-      "Les drafts d'email générés par l'IA sont vraiment un gain de temps énorme. On les personnalise en 10 minutes et on envoie. Impeccable.",
+      "Le scoring IA est ultra précis. En 2 semaines on a trouvé 4 AOs parfaitement adaptés à notre activité. On répond maintenant avec confiance, sans perdre de temps sur des marchés hors budget.",
     initials: "KB",
     score: "91/100",
   },
@@ -32,10 +32,10 @@ export default function Testimonials() {
         <div className="divider mb-20" />
 
         <div className="text-center mb-16 reveal">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--accent)" }}>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3" className="text-gradient-accent">
             Témoignages
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
             ILS UTILISENT OFFRIO
           </h2>
         </div>
@@ -60,12 +60,12 @@ export default function Testimonials() {
               <div className="flex items-center gap-3 pt-2" style={{ borderTop: "1px solid var(--border)" }}>
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
-                  style={{ background: "rgba(37,99,235,0.2)", color: "#93C5FD" }}
+                  style={{ background: "rgba(79,110,247,0.18)", color: "#93B4FF" }}
                 >
                   {t.initials}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold truncate" style={{ color: "#F1F5F9" }}>{t.name}</div>
+                  <div className="text-sm font-semibold truncate" style={{ color: "#F0F4FF" }}>{t.name}</div>
                   <div className="text-xs truncate" style={{ color: "var(--text-3)" }}>{t.role}</div>
                 </div>
                 <span className="score-high text-xs flex-shrink-0">{t.score}</span>

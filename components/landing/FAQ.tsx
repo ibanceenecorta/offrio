@@ -34,10 +34,10 @@ export default function FAQ() {
         <div className="divider mb-20" />
 
         <div className="text-center mb-16 reveal">
-          <p className="text-sm font-semibold tracking-widest uppercase mb-3" style={{ color: "var(--accent)" }}>
+          <p className="text-sm font-semibold tracking-widest uppercase mb-3" className="text-gradient-accent">
             FAQ
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
             QUESTIONS FRÉQUENTES
           </h2>
         </div>
@@ -54,14 +54,14 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between p-5 text-left"
                 style={{ background: "transparent", border: "none", cursor: "pointer" }}
               >
-                <span className="font-semibold text-sm md:text-base pr-4" style={{ color: "#F1F5F9" }}>
+                <span className="font-semibold text-sm md:text-base pr-4" style={{ color: "#F0F4FF" }}>
                   {item.q}
                 </span>
                 <span
                   className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-200"
                   style={{
-                    background: "rgba(37,99,235,0.12)",
-                    color: "#93C5FD",
+                    background: "rgba(79,110,247,0.12)",
+                    color: "#93B4FF",
                     transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
                   }}
                 >

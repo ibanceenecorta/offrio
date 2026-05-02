@@ -69,7 +69,7 @@ export default async function DashboardPage() {
     <div>
       {/* Header */}
       <div className="mb-8">
-        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
           TABLEAU DE BORD
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -114,14 +114,14 @@ export default async function DashboardPage() {
       {/* Recent AOs */}
       <div className="glass grad-border">
         <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid var(--border)" }}>
-          <h2 className="font-semibold text-sm" style={{ color: "#F1F5F9" }}>Derniers appels d&apos;offres</h2>
-          <a href="/dashboard/aos" className="text-xs" style={{ color: "#93C5FD" }}>Voir tous →</a>
+          <h2 className="font-semibold text-sm" style={{ color: "#F0F4FF" }}>Derniers appels d&apos;offres</h2>
+          <a href="/dashboard/aos" className="text-xs" style={{ color: "#93B4FF" }}>Voir tous →</a>
         </div>
 
         {!userAos || userAos.length === 0 ? (
           <div className="py-16 text-center">
             <div className="text-4xl mb-3">📭</div>
-            <p className="font-semibold mb-1" style={{ color: "#F1F5F9" }}>Aucun AO pour le moment</p>
+            <p className="font-semibold mb-1" style={{ color: "#F0F4FF" }}>Aucun AO pour le moment</p>
             <p className="text-sm" style={{ color: "var(--text-2)" }}>
               Les AOs correspondant à votre profil apparaîtront ici.
             </p>
@@ -146,7 +146,7 @@ export default async function DashboardPage() {
                   return (
                     <tr key={row.id as string}>
                       <td>
-                        <span className="font-medium text-sm" style={{ color: "#F1F5F9" }}>
+                        <span className="font-medium text-sm" style={{ color: "#F0F4FF" }}>
                           {(ao.titre as string)?.length > 60
                             ? (ao.titre as string).slice(0, 60) + "…"
                             : (ao.titre as string)}

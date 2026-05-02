@@ -18,7 +18,7 @@ export default function Footer() {
             <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
             <Link href="/cgv" className="hover:text-white transition-colors">CGV</Link>
             <Link href="/confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>
-            <a href="mailto:contact@offrio.fr" className="hover:text-white transition-colors">Contact</a>
+            <a href="mailto:contact@getoffrio.fr" className="hover:text-white transition-colors">Contact</a>
           </div>
         </div>
 

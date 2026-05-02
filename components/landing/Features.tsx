@@ -22,10 +22,10 @@ const steps = [
   },
   {
     step: "04",
-    title: "Draft de réponse prêt",
-    desc: "Pour chaque AO, un draft de mail de candidature est pré-rédigé par l'IA. Plus qu'à personnaliser.",
-    cmd: "$ offrio draft --ao=MRC-2025-04712 --tone=professionnel",
-    output: "✓ Email de réponse généré · Prêt à envoyer",
+    title: "Suivi dans le dashboard",
+    desc: "Marquez les AOs comme intéressants, ignorez les non-pertinents. Votre historique et vos performances sont disponibles en temps réel.",
+    cmd: "$ offrio status --ao=MRC-2025-04712 --set=interessant",
+    output: "✓ Statut mis à jour · Score moyen: 91/100 · 3 AOs actifs",
   },
 ];
 

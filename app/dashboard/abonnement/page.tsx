@@ -3,16 +3,16 @@ import { createClient } from "@/lib/supabase/server";
 const PLANS = [
   {
     name: "Starter", price: "79", slug: "starter",
-    features: ["1 utilisateur", "10 AOs / jour", "Source BOAMP", "Résumés IA", "Alertes email"],
+    features: ["2 AOs / jour", "Source BOAMP", "Résumés IA", "Alertes email quotidiennes"],
   },
   {
     name: "Pro", price: "119", slug: "pro",
-    features: ["5 utilisateurs", "30 AOs / jour", "3 sources", "Scoring IA avancé", "Drafts email"],
+    features: ["5 AOs / jour", "3 sources d'AOs", "Scoring IA avancé", "Profil personnalisé"],
     highlight: true,
   },
   {
     name: "Scale", price: "199", slug: "scale",
-    features: ["Utilisateurs illimités", "AOs illimités", "Sources illimitées", "Support prioritaire"],
+    features: ["AOs illimités", "Sources illimitées", "Support prioritaire", "Onboarding dédié"],
   },
 ];
 
@@ -116,12 +116,12 @@ export default async function AbonnementPage() {
             <div
               key={p.slug}
               className="glass grad-border p-5 flex flex-col"
-              style={p.highlight ? { background: "rgba(37,99,235,0.06)", borderColor: "rgba(37,99,235,0.3)" } : {}}
+              style={p.highlight ? { background: "rgba(79,110,247,0.06)", borderColor: "rgba(79,110,247,0.3)" } : {}}
             >
               <h4 className="font-heading text-xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.05em" }}>
                 {p.name}
               </h4>
-              <p className="font-heading text-2xl mb-3" style={{ color: "#93C5FD" }}>
+              <p className="font-heading text-2xl mb-3" style={{ color: "#93B4FF" }}>
                 {p.price}€<span className="text-sm font-normal" style={{ color: "var(--text-3)" }}>/mois</span>
               </p>
               <ul className="space-y-1.5 flex-1 mb-4">
