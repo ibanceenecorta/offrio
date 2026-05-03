@@ -58,5 +58,5 @@ export async function POST(request: NextRequest) {
     metadata: { user_id: user.id, plan },
   });
 
-  return NextResponse.redirect(session.url!);
+  return NextResponse.redirect(session.url!, { status: 303 });
 }
