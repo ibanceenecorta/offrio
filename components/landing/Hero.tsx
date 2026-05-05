@@ -34,7 +34,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   }, [target]);
 
   return (
-    <span ref={ref} className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.02em" }}>
+    <span ref={ref} className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
       {value.toLocaleString("fr-FR")}{suffix}
     </span>
   );
@@ -50,7 +50,7 @@ function EmailMockup() {
       <div
         className="absolute inset-0 rounded-2xl pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(79,110,247,0.18) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(99,102,241,0.15) 0%, transparent 70%)",
           transform: "scale(1.1)",
         }}
       />
@@ -59,17 +59,17 @@ function EmailMockup() {
       <div
         className="relative rounded-2xl overflow-hidden"
         style={{
-          background: "rgba(10,12,30,0.9)",
-          border: "1px solid rgba(79,110,247,0.25)",
+          background: "rgba(13,13,15,0.92)",
+          border: "1px solid rgba(99,102,241,0.2)",
           backdropFilter: "blur(20px)",
         }}
       >
         {/* Email header */}
         <div
           style={{
-            background: "linear-gradient(135deg, #0E1128, #151830)",
+            background: "rgba(18,18,20,0.95)",
             padding: "16px 20px",
-            borderBottom: "1px solid rgba(79,110,247,0.12)",
+            borderBottom: "1px solid var(--border-2)",
           }}
         >
           <div className="flex items-center justify-between mb-3">
@@ -82,7 +82,7 @@ function EmailMockup() {
               </div>
               <span
                 className="text-xs px-2 py-0.5 rounded-full"
-                style={{ background: "rgba(79,110,247,0.15)", color: "#93B4FF", border: "1px solid rgba(79,110,247,0.25)" }}
+                style={{ background: "rgba(99,102,241,0.12)", color: "#A5B4FC", border: "1px solid rgba(99,102,241,0.25)" }}
               >
                 IA
               </span>
@@ -95,7 +95,7 @@ function EmailMockup() {
         </div>
 
         {/* AO Card 1 */}
-        <div style={{ padding: "14px 20px", borderBottom: "1px solid rgba(79,110,247,0.08)" }}>
+        <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--border)" }}>
           <div className="flex items-start justify-between gap-3 mb-2">
             <div className="flex-1">
               <p className="text-xs font-semibold mb-1" style={{ color: "#F0F4FF" }}>
@@ -118,7 +118,7 @@ function EmailMockup() {
         </div>
 
         {/* AO Card 2 */}
-        <div style={{ padding: "14px 20px", borderBottom: "1px solid rgba(79,110,247,0.08)" }}>
+        <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--border)" }}>
           <div className="flex items-start justify-between gap-3 mb-2">
             <div className="flex-1">
               <p className="text-xs font-semibold mb-1" style={{ color: "#F0F4FF" }}>
@@ -144,7 +144,7 @@ function EmailMockup() {
         <div
           style={{
             padding: "12px 20px",
-            background: "rgba(8,9,26,0.5)",
+            background: "rgba(9,9,11,0.6)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -180,9 +180,9 @@ export default function Hero() {
               <span
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
                 style={{
-                  background: "rgba(79,110,247,0.1)",
-                  border: "1px solid rgba(79,110,247,0.25)",
-                  color: "#93B4FF",
+                  background: "rgba(99,102,241,0.08)",
+                  border: "1px solid rgba(99,102,241,0.22)",
+                  color: "#A5B4FC",
                 }}
               >
                 <span
@@ -196,11 +196,11 @@ export default function Hero() {
             {/* Headline */}
             <h1
               className="font-heading anim-fadeUp d-2 leading-none mb-6"
-              style={{ fontSize: "clamp(48px, 7vw, 80px)", color: "#F0F4FF", letterSpacing: "0.02em" }}
+              style={{ fontSize: "clamp(44px, 6.5vw, 76px)", color: "#FAFAFA", letterSpacing: "-0.01em", fontWeight: 800 }}
             >
-              NE RATEZ PLUS<br />
-              <span className="text-gradient-blue">AUCUN APPEL</span><br />
-              D&apos;OFFRES
+              Ne ratez plus<br />
+              <span className="text-gradient-blue">aucun appel</span><br />
+              d&apos;offres
             </h1>
 
             <p

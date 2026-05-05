@@ -35,8 +35,8 @@ export default function Testimonials() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Témoignages
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
-            ILS UTILISENT OFFRIO
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+            Ils utilisent OFFRIO
           </h2>
         </div>
 
@@ -60,12 +60,12 @@ export default function Testimonials() {
               <div className="flex items-center gap-3 pt-2" style={{ borderTop: "1px solid var(--border)" }}>
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
-                  style={{ background: "rgba(79,110,247,0.18)", color: "#93B4FF" }}
+                  style={{ background: "rgba(99,102,241,0.12)", color: "#A5B4FC" }}
                 >
                   {t.initials}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold truncate" style={{ color: "#F0F4FF" }}>{t.name}</div>
+                  <div className="text-sm font-semibold truncate" style={{ color: "#FAFAFA" }}>{t.name}</div>
                   <div className="text-xs truncate" style={{ color: "var(--text-3)" }}>{t.role}</div>
                 </div>
                 <span className="score-high text-xs flex-shrink-0">{t.score}</span>

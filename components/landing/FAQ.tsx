@@ -37,8 +37,8 @@ export default function FAQ() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             FAQ
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
-            QUESTIONS FRÉQUENTES
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+            Questions fréquentes
           </h2>
         </div>
 
@@ -60,8 +60,8 @@ export default function FAQ() {
                 <span
                   className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform duration-200"
                   style={{
-                    background: "rgba(79,110,247,0.12)",
-                    color: "#93B4FF",
+                    background: "rgba(99,102,241,0.1)",
+                    color: "#A5B4FC",
                     transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
                   }}
                 >

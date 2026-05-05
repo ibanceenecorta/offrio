@@ -52,8 +52,8 @@ export default function Pricing() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Tarifs
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl mb-4" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
-            SIMPLE ET TRANSPARENT
+          <h2 className="font-heading text-4xl md:text-5xl mb-4 font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+            Simple et transparent
           </h2>
           <p style={{ color: "var(--text-2)" }}>14 jours gratuits · Sans carte bancaire · Résiliable à tout moment</p>
         </div>
@@ -74,9 +74,9 @@ export default function Pricing() {
                 <div
                   className="relative flex flex-col h-full rounded-2xl overflow-hidden"
                   style={{
-                    background: "linear-gradient(160deg, rgba(79,110,247,0.14) 0%, rgba(124,58,237,0.08) 100%)",
-                    border: "1px solid rgba(79,110,247,0.45)",
-                    boxShadow: "0 0 60px rgba(79,110,247,0.2), 0 0 120px rgba(124,58,237,0.08)",
+                    background: "linear-gradient(160deg, rgba(99,102,241,0.14) 0%, rgba(124,58,237,0.08) 100%)",
+                    border: "1px solid rgba(99,102,241,0.45)",
+                    boxShadow: "0 0 60px rgba(99,102,241,0.2), 0 0 120px rgba(124,58,237,0.08)",
                     padding: "28px",
                     transform: "translateY(-8px)",
                   }}
@@ -84,7 +84,7 @@ export default function Pricing() {
                   {/* Glow top */}
                   <div
                     className="absolute top-0 left-0 right-0 h-px pointer-events-none"
-                    style={{ background: "linear-gradient(90deg, transparent, rgba(79,110,247,0.6), rgba(124,58,237,0.4), transparent)" }}
+                    style={{ background: "linear-gradient(90deg, transparent, rgba(99,102,241,0.6), rgba(124,58,237,0.4), transparent)" }}
                   />
 
                   {/* Badge */}
@@ -94,7 +94,7 @@ export default function Pricing() {
                       style={{
                         background: "var(--accent-gradient)",
                         color: "#fff",
-                        boxShadow: "0 4px 16px rgba(79,110,247,0.4)",
+                        boxShadow: "0 4px 16px rgba(99,102,241,0.4)",
                         letterSpacing: "0.05em",
                       }}
                     >
@@ -120,16 +120,16 @@ function PlanContent({ plan, isPro }: { plan: typeof plans[0]; isPro: boolean })
     <>
       <div className="mb-6">
         <h3
-          className="font-heading text-2xl mb-1"
-          style={{ color: isPro ? "#F0F4FF" : "var(--text-2)", letterSpacing: "0.06em" }}
+          className="font-heading text-2xl mb-1 font-bold"
+          style={{ color: isPro ? "#FAFAFA" : "var(--text)", letterSpacing: "-0.01em" }}
         >
           {plan.name}
         </h3>
         <p className="text-sm mb-5" style={{ color: "var(--text-2)" }}>{plan.desc}</p>
         <div className="flex items-end gap-1">
           <span
-            className="font-heading text-5xl"
-            style={{ color: "#F0F4FF", lineHeight: 1 }}
+            className="font-heading text-5xl font-bold"
+            style={{ color: "#FAFAFA", lineHeight: 1, letterSpacing: "-0.02em" }}
           >
             {plan.price}€
           </span>
@@ -143,12 +143,12 @@ function PlanContent({ plan, isPro }: { plan: typeof plans[0]; isPro: boolean })
             <span
               className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
               style={{
-                background: isPro ? "rgba(79,110,247,0.15)" : "rgba(34,197,94,0.1)",
-                border: isPro ? "1px solid rgba(79,110,247,0.3)" : "1px solid rgba(34,197,94,0.2)",
+                background: isPro ? "rgba(99,102,241,0.15)" : "rgba(34,197,94,0.1)",
+                border: isPro ? "1px solid rgba(99,102,241,0.3)" : "1px solid rgba(34,197,94,0.2)",
               }}
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                <path d="M1.5 5l2.5 2.5L8.5 2.5" stroke={isPro ? "#93B4FF" : "#4ADE80"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M1.5 5l2.5 2.5L8.5 2.5" stroke={isPro ? "#A5B4FC" : "#4ADE80"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
             {f}

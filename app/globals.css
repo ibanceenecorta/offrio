@@ -170,7 +170,7 @@ body::after {
 
 .btn-secondary {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  background: rgba(14,17,40,0.5);
+  background: rgba(24,24,27,0.6);
   color: var(--text);
   font-weight: 500;
   font-size: 15px;
@@ -184,8 +184,8 @@ body::after {
   backdrop-filter: blur(8px);
 }
 .btn-secondary:hover {
-  background: rgba(79,110,247,0.08);
-  border-color: rgba(79,110,247,0.35);
+  background: rgba(99,102,241,0.08);
+  border-color: rgba(99,102,241,0.3);
   transform: translateY(-1px);
 }
 
@@ -209,19 +209,19 @@ body::after {
 }
 .field-error { border-color: var(--danger) !important; }
 
-select.field option { background: #1E293B; }
+select.field option { background: #18181B; }
 
 /* ── Navbar ── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(15,23,42,0.82);
+  background: rgba(9,9,11,0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: border-color 0.3s, background 0.3s;
 }
 .navbar.scrolled {
-  background: rgba(15,23,42,0.95);
+  background: rgba(9,9,11,0.92);
   border-bottom-color: var(--border-2);
 }
 
@@ -246,7 +246,7 @@ select.field option { background: #1E293B; }
 
 /* ── Skeleton ── */
 .skeleton {
-  background: linear-gradient(90deg, rgba(30,41,59,0.9) 25%, rgba(51,65,85,0.7) 50%, rgba(30,41,59,0.9) 75%);
+  background: linear-gradient(90deg, rgba(24,24,27,0.9) 25%, rgba(39,39,42,0.7) 50%, rgba(24,24,27,0.9) 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
   border-radius: 8px;
@@ -284,7 +284,7 @@ select.field option { background: #1E293B; }
 .tbl { width:100%; border-collapse:collapse; }
 .tbl th { text-align:left; padding:10px 14px; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--text-3); border-bottom:1px solid var(--border); }
 .tbl td { padding:13px 14px; border-bottom:1px solid var(--border); font-size:14px; }
-.tbl tr:hover td { background:rgba(30,41,59,0.4); }
+.tbl tr:hover td { background:rgba(24,24,27,0.6); }
 
 /* ── Terminal ── */
 .terminal {
@@ -358,7 +358,7 @@ select.field option { background: #1E293B; }
 .bar:hover .bar-tip { opacity:1; }
 .bar-tip {
   position:absolute; top:-28px; left:50%; transform:translateX(-50%);
-  background:#1E293B; border:1px solid var(--border-2); border-radius:5px;
+  background:#18181B; border:1px solid var(--border-2); border-radius:5px;
   padding:2px 7px; font-size:11px; white-space:nowrap; opacity:0;
   transition:opacity .15s; pointer-events:none;
 }

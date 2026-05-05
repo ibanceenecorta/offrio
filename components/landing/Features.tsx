@@ -39,8 +39,8 @@ export default function Features() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Comment ça marche
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
-            4 ÉTAPES, ZÉRO EFFORT
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+            4 étapes, zéro effort
           </h2>
         </div>
 

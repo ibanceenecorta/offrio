@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Instrument_Sans } from "next/font/google";
+import { Syne, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-bebas",
+  variable: "--font-syne",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const instrumentSans = Instrument_Sans({
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${bebasNeue.variable} ${instrumentSans.variable}`}>
+    <html lang="fr" className={`${syne.variable} ${instrumentSans.variable}`}>
       <body className="antialiased min-h-screen">
         {children}
         <Toaster
@@ -34,9 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           position="top-right"
           toastOptions={{
             style: {
-              background: "#1E293B",
-              border: "1px solid rgba(37,99,235,0.25)",
-              color: "#F1F5F9",
+              background: "#18181B",
+              border: "1px solid rgba(99,102,241,0.2)",
+              color: "#FAFAFA",
               fontFamily: "var(--font-instrument)",
             },
           }}

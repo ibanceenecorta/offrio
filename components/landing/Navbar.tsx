@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
         <div className="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-heading text-2xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+            <span className="font-heading text-xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "0.08em" }}>
               OFFRIO
             </span>
           </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
         {menuOpen && (
           <div
             className="md:hidden px-4 pb-4 space-y-2"
-            style={{ background: "rgba(15,23,42,0.98)", borderTop: "1px solid var(--border-2)" }}
+            style={{ background: "rgba(9,9,11,0.98)", borderTop: "1px solid var(--border-2)" }}
           >
             {links.map((item) => (
               <a

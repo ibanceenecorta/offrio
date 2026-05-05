@@ -35,7 +35,7 @@ const config: Config = {
         popover: { DEFAULT: "#1E293B", foreground: "#F1F5F9" },
       },
       fontFamily: {
-        heading: ["var(--font-bebas)", "cursive"],
+        heading: ["var(--font-syne)", "sans-serif"],
         body: ["var(--font-instrument)", "sans-serif"],
         sans: ["var(--font-instrument)", "sans-serif"],
         mono: ["Courier New", "monospace"],
