@@ -16,7 +16,7 @@ function buildLast30Days(rows: { created_at: string; statut: string; ao?: { scor
     days.push({
       label,
       recus: dayRows.length,
-      traites: dayRows.filter((r) => r.statut === "traite" || r.statut === "interessant").length,
+      traites: dayRows.filter((r) => ["interessant", "dossier_en_cours", "envoye", "gagne"].includes(r.statut)).length,
     });
   }
   return days;
@@ -25,7 +25,17 @@ function buildLast30Days(rows: { created_at: string; statut: string; ao?: { scor
 export default function PerformancePage() {
   const [days, setDays] = useState<DayData[]>([]);
   const [loading, setLoading] = useState(true);
-  const [kpis, setKpis] = useState({ recus: 0, traites: 0, taux: 0, score: 0 });
+  const [kpis, setKpis] = useState({
+    recus: 0,
+    traites: 0,
+    taux: 0,
+    score: 0,
+    envoyes: 0,
+    gagnes: 0,
+    perdu: 0,
+    tauxTransformation: 0,
+    roiTotal: 0,
+  });
   const [tooltip, setTooltip] = useState<{ idx: number; x: number; y: number } | null>(null);
 
   const load = useCallback(async () => {
@@ -35,23 +45,33 @@ export default function PerformancePage() {
 
     const { data } = await supabase
       .from("user_aos")
-      .select("created_at, statut, ao:appels_offres(score_ia)")
+      .select("created_at, statut, montant_gagne, ao:appels_offres(score_ia)")
       .eq("user_id", user.id);
 
-    const rows = (data || []) as { created_at: string; statut: string; ao?: { score_ia?: number } | null }[];
+    const rows = (data || []) as { created_at: string; statut: string; montant_gagne?: number; ao?: { score_ia?: number } | null }[];
     const chart = buildLast30Days(rows);
     setDays(chart);
 
     const totalRecus = rows.length;
-    const totalTraites = rows.filter((r) => r.statut === "traite" || r.statut === "interessant").length;
+    const totalTraites = rows.filter((r) => ["interessant", "dossier_en_cours", "envoye", "gagne"].includes(r.statut)).length;
+    const envoyes = rows.filter((r) => ["envoye", "gagne", "perdu"].includes(r.statut)).length;
+    const gagnes = rows.filter((r) => r.statut === "gagne").length;
+    const perdus = rows.filter((r) => r.statut === "perdu").length;
     const scores = rows.map((r) => r.ao?.score_ia).filter((v): v is number => typeof v === "number");
     const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : 0;
+    const roiTotal = rows.filter((r) => r.statut === "gagne" && r.montant_gagne).reduce((sum, r) => sum + (r.montant_gagne || 0), 0);
+    const tauxTransformation = envoyes > 0 ? Math.round((gagnes / envoyes) * 100) : 0;
 
     setKpis({
       recus: totalRecus,
       traites: totalTraites,
       taux: totalRecus > 0 ? Math.round((totalTraites / totalRecus) * 100) : 0,
       score: avgScore,
+      envoyes,
+      gagnes,
+      perdu: perdus,
+      tauxTransformation,
+      roiTotal,
     });
     setLoading(false);
   }, []);
@@ -60,6 +80,15 @@ export default function PerformancePage() {
 
   const maxVal = Math.max(...days.map((d) => d.recus), 1);
 
+  const kpiCards = [
+    { label: "AOs reçus", value: kpis.recus, color: "#60A5FA", sub: "total" },
+    { label: "AOs traités", value: kpis.traites, color: "#22C55E", sub: `${kpis.taux}% du total` },
+    { label: "Score IA moyen", value: kpis.score ? `${kpis.score}/100` : "—", color: "#A78BFA", sub: "pertinence" },
+    { label: "Dossiers envoyés", value: kpis.envoyes, color: "#FCD34D", sub: "candidatures" },
+    { label: "Marchés gagnés", value: kpis.gagnes, color: "#4ADE80", sub: `${kpis.tauxTransformation}% de taux` },
+    { label: "CA potentiel", value: kpis.roiTotal > 0 ? `${kpis.roiTotal.toLocaleString("fr-FR")} €` : "—", color: "#34D399", sub: "montants gagnés" },
+  ];
+
   return (
     <div>
       <div className="mb-8">
@@ -67,28 +96,67 @@ export default function PerformancePage() {
           PERFORMANCE
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
-          Indicateurs de votre activité sur les 30 derniers jours.
+          Indicateurs de votre activité et suivi de candidatures.
         </p>
       </div>
 
       {/* KPIs */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        {[
-          { label: "AOs reçus", value: kpis.recus, color: "#60A5FA" },
-          { label: "AOs traités", value: kpis.traites, color: "#22C55E" },
-          { label: "Taux de traitement", value: `${kpis.taux}%`, color: "#F59E0B" },
-          { label: "Score IA moyen", value: kpis.score ? `${kpis.score}/100` : "—", color: "#A78BFA" },
-        ].map((k) => (
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {kpiCards.map((k) => (
           <div key={k.label} className="glass grad-border p-5">
-            <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: "var(--text-3)" }}>
+            <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: "var(--text-3)" }}>
               {k.label}
             </p>
-            <p className="font-heading text-3xl" style={{ color: k.color, letterSpacing: "0.02em" }}>
-              {k.value}
+            <p className="font-heading text-3xl mb-1" style={{ color: k.color, letterSpacing: "0.02em" }}>
+              {loading ? "…" : k.value}
             </p>
+            <p className="text-xs" style={{ color: "var(--text-3)" }}>{k.sub}</p>
           </div>
         ))}
       </div>
+
+      {/* ROI Banner — visible si des marchés gagnés */}
+      {!loading && kpis.gagnes > 0 && (
+        <div className="mb-8 p-5 rounded-xl flex items-center gap-4"
+          style={{ background: "linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(16,185,129,0.05) 100%)", border: "1px solid rgba(34,197,94,0.25)" }}>
+          <div className="text-3xl">🏆</div>
+          <div>
+            <p className="font-semibold" style={{ color: "#4ADE80" }}>
+              Tu as répondu à {kpis.envoyes} AO{kpis.envoyes > 1 ? "s" : ""}, gagné {kpis.gagnes} marché{kpis.gagnes > 1 ? "s" : ""}
+              {kpis.roiTotal > 0 ? `, pour ${kpis.roiTotal.toLocaleString("fr-FR")} € de CA` : ""}.
+            </p>
+            <p className="text-sm mt-0.5" style={{ color: "var(--text-2)" }}>
+              Taux de transformation : {kpis.tauxTransformation}% — {kpis.perdu > 0 ? `${kpis.perdu} perdu${kpis.perdu > 1 ? "s" : ""}` : "Aucun perdu pour l'instant"}.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Funnel candidature */}
+      {!loading && kpis.envoyes > 0 && (
+        <div className="glass grad-border p-6 mb-8">
+          <h2 className="font-semibold text-sm mb-5" style={{ color: "#F1F5F9" }}>Funnel de candidature</h2>
+          <div className="flex items-center gap-2 flex-wrap">
+            {[
+              { label: "Intéressants", value: kpis.traites, color: "#6366F1" },
+              { label: "Envoyés", value: kpis.envoyes, color: "#F59E0B" },
+              { label: "Gagnés", value: kpis.gagnes, color: "#22C55E" },
+            ].map((step, i) => (
+              <div key={step.label} className="flex items-center gap-2">
+                <div className="text-center">
+                  <div className="font-heading text-2xl" style={{ color: step.color }}>{step.value}</div>
+                  <div className="text-xs" style={{ color: "var(--text-3)" }}>{step.label}</div>
+                </div>
+                {i < 2 && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-3)" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6"/>
+                  </svg>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Chart */}
       <div className="glass grad-border p-6">
@@ -96,7 +164,7 @@ export default function PerformancePage() {
           <h2 className="font-semibold text-sm" style={{ color: "#F1F5F9" }}>AOs reçus vs traités — 30 derniers jours</h2>
           <div className="flex items-center gap-4 text-xs" style={{ color: "var(--text-2)" }}>
             <span className="flex items-center gap-1.5">
-              <span className="w-3 h-3 rounded-sm" style={{ background: "#2563EB" }} />
+              <span className="w-3 h-3 rounded-sm" style={{ background: "#6366F1" }} />
               Reçus
             </span>
             <span className="flex items-center gap-1.5">
@@ -129,7 +197,7 @@ export default function PerformancePage() {
                     className="flex-1 rounded-t-sm transition-all duration-300"
                     style={{
                       height: `${(d.recus / maxVal) * 100}%`,
-                      background: "linear-gradient(180deg, #60A5FA, #2563EB)",
+                      background: "linear-gradient(180deg, #818CF8, #6366F1)",
                       minHeight: d.recus > 0 ? "3px" : "0",
                     }}
                   />
@@ -159,12 +227,11 @@ export default function PerformancePage() {
                 }}
               >
                 <div style={{ color: "var(--text-2)" }}>{days[tooltip.idx].label}</div>
-                <div style={{ color: "#60A5FA" }}>Reçus : {days[tooltip.idx].recus}</div>
+                <div style={{ color: "#818CF8" }}>Reçus : {days[tooltip.idx].recus}</div>
                 <div style={{ color: "#4ADE80" }}>Traités : {days[tooltip.idx].traites}</div>
               </div>
             )}
 
-            {/* X-axis labels — show every 5 days */}
             <div className="flex overflow-x-hidden mt-1">
               {days.map((d, i) => (
                 <div key={i} className="flex-1 text-center" style={{ fontSize: "10px", color: "var(--text-3)" }}>
