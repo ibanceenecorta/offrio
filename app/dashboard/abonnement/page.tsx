@@ -95,15 +95,21 @@ export default async function AbonnementPage() {
           ))}
         </div>
 
-        <form action="/api/stripe/portal" method="POST">
-          <button
-            type="submit"
-            className="btn-primary"
-            style={{ padding: "10px 24px" }}
-          >
-            Gérer mon abonnement
-          </button>
-        </form>
+        {profile?.stripe_customer_id ? (
+          <form action="/api/stripe/portal" method="POST">
+            <button
+              type="submit"
+              className="btn-primary"
+              style={{ padding: "10px 24px" }}
+            >
+              Gérer mon abonnement
+            </button>
+          </form>
+        ) : (
+          <p className="text-sm" style={{ color: "var(--text-3)" }}>
+            Choisissez un plan ci-dessous pour activer votre abonnement.
+          </p>
+        )}
       </div>
 
       {/* Upgrade options */}
