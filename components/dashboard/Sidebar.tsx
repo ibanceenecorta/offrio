@@ -100,13 +100,13 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
         className="fixed left-0 top-0 h-screen flex-col z-40 hidden md:flex"
         style={{
           width: "224px",
-          background: "rgba(15,23,42,0.97)",
-          borderRight: "1px solid var(--border-2)",
-          backdropFilter: "blur(20px)",
+          background: "#FFFFFF",
+          borderRight: "1px solid var(--border)",
+          boxShadow: "2px 0 12px rgba(0,0,0,0.04)",
         }}
       >
         <div className="px-5 py-5" style={{ borderBottom: "1px solid var(--border)" }}>
-          <Link href="/dashboard" className="font-heading text-xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+          <Link href="/dashboard" className="font-heading text-xl" style={{ color: "var(--accent)", letterSpacing: "0.18em" }}>
             OFFRIO
           </Link>
         </div>
@@ -127,7 +127,7 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
         <div className="px-4 py-4" style={{ borderTop: "1px solid var(--border)" }}>
           {userEmail && (
             <div className="mb-3">
-              <p className="text-xs font-medium truncate" style={{ color: "#F1F5F9" }}>{userEmail}</p>
+              <p className="text-xs font-medium truncate" style={{ color: "var(--text)" }}>{userEmail}</p>
               {plan && (
                 <span className="badge badge-blue mt-1 text-xs">{plan}</span>
               )}
@@ -153,17 +153,18 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
         className="fixed top-0 left-0 right-0 z-40 flex md:hidden items-center justify-between px-4"
         style={{
           height: "56px",
-          background: "rgba(15,23,42,0.97)",
-          borderBottom: "1px solid var(--border-2)",
+          background: "rgba(248,249,255,0.96)",
+          borderBottom: "1px solid var(--border)",
           backdropFilter: "blur(20px)",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
         }}
       >
-        <Link href="/dashboard" className="font-heading text-lg" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+        <Link href="/dashboard" className="font-heading text-lg" style={{ color: "var(--accent)", letterSpacing: "0.18em" }}>
           OFFRIO
         </Link>
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ background: "none", border: "none", cursor: "pointer", color: "#F1F5F9", padding: "8px" }}
+          style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text)", padding: "8px" }}
         >
           {menuOpen ? (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -186,14 +187,15 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
           <div
             className="absolute top-0 left-0 h-full w-72 flex flex-col"
             style={{
-              background: "rgba(15,23,42,0.99)",
-              borderRight: "1px solid var(--border-2)",
+              background: "#FFFFFF",
+              borderRight: "1px solid var(--border)",
+              boxShadow: "4px 0 24px rgba(0,0,0,0.1)",
             }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="px-5 py-5 flex items-center justify-between" style={{ borderBottom: "1px solid var(--border)" }}>
-              <span className="font-heading text-xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>OFFRIO</span>
-              <button onClick={() => setMenuOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-3)" }}>
+              <span className="font-heading text-xl" style={{ color: "var(--accent)", letterSpacing: "0.18em" }}>OFFRIO</span>
+              <button onClick={() => setMenuOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text-2)" }}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                 </svg>
@@ -217,7 +219,7 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
             <div className="px-4 py-4" style={{ borderTop: "1px solid var(--border)" }}>
               {userEmail && (
                 <div className="mb-3">
-                  <p className="text-xs font-medium truncate" style={{ color: "#F1F5F9" }}>{userEmail}</p>
+                  <p className="text-xs font-medium truncate" style={{ color: "var(--text)" }}>{userEmail}</p>
                   {plan && <span className="badge badge-blue mt-1 text-xs">{plan}</span>}
                 </div>
               )}
@@ -240,9 +242,10 @@ export function Sidebar({ userEmail, plan }: { userEmail?: string; plan?: string
       <nav
         className="fixed bottom-0 left-0 right-0 z-40 flex md:hidden"
         style={{
-          background: "rgba(15,23,42,0.97)",
-          borderTop: "1px solid var(--border-2)",
+          background: "rgba(248,249,255,0.96)",
+          borderTop: "1px solid var(--border)",
           backdropFilter: "blur(20px)",
+          boxShadow: "0 -2px 12px rgba(0,0,0,0.06)",
         }}
       >
         {mobileNav.map((item) => {
