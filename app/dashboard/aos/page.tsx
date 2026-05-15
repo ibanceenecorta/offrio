@@ -40,10 +40,10 @@ const STATUTS = [
 
 const STATUT_CONFIG: Record<string, { label: string; badge: string; bg: string; border: string; text: string }> = {
   nouveau:          { label: "Nouveau",       badge: "badge-blue",   bg: "rgba(99,102,241,0.1)",  border: "rgba(99,102,241,0.3)",  text: "#A5B4FC" },
-  interessant:      { label: "Intéressant",   badge: "badge-green",  bg: "rgba(34,197,94,0.1)",   border: "rgba(34,197,94,0.3)",   text: "#4ADE80" },
-  dossier_en_cours: { label: "En cours",      badge: "badge-yellow", bg: "rgba(245,158,11,0.1)",  border: "rgba(245,158,11,0.3)",  text: "#FCD34D" },
+  interessant:      { label: "Intéressant",   badge: "badge-green",  bg: "rgba(79,70,229,0.08)",   border: "rgba(34,197,94,0.3)",   text: "#4F46E5" },
+  dossier_en_cours: { label: "En cours",      badge: "badge-yellow", bg: "rgba(79,70,229,0.08)",  border: "rgba(245,158,11,0.3)",  text: "#4F46E5" },
   envoye:           { label: "Envoyé",        badge: "badge-purple", bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.3)", text: "#C4B5FD" },
-  gagne:            { label: "Gagné ✓",       badge: "badge-green",  bg: "rgba(34,197,94,0.15)",  border: "rgba(34,197,94,0.4)",   text: "#4ADE80" },
+  gagne:            { label: "Gagné ✓",       badge: "badge-green",  bg: "rgba(34,197,94,0.15)",  border: "rgba(34,197,94,0.4)",   text: "#4F46E5" },
   perdu:            { label: "Perdu",         badge: "badge-red",    bg: "rgba(239,68,68,0.1)",   border: "rgba(239,68,68,0.3)",   text: "#F87171" },
   ignore:           { label: "Ignoré",        badge: "badge-gray",   bg: "rgba(82,82,91,0.2)",    border: "rgba(82,82,91,0.4)",    text: "#71717A" },
 };
@@ -55,8 +55,8 @@ function getDeadlineBadge(dateStr: string) {
   const diff = Math.ceil((limit.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
   if (diff < 0) return { label: "Expiré", bg: "rgba(239,68,68,0.15)", border: "rgba(239,68,68,0.4)", text: "#F87171" };
   if (diff <= 1) return { label: "J-1 ⚠️", bg: "rgba(239,68,68,0.15)", border: "rgba(239,68,68,0.4)", text: "#F87171" };
-  if (diff <= 3) return { label: `J-${diff} ⚠️`, bg: "rgba(245,158,11,0.15)", border: "rgba(245,158,11,0.4)", text: "#FCD34D" };
-  if (diff <= 7) return { label: `J-${diff}`, bg: "rgba(245,158,11,0.1)", border: "rgba(245,158,11,0.2)", text: "#FCD34D" };
+  if (diff <= 3) return { label: `J-${diff} ⚠️`, bg: "rgba(245,158,11,0.15)", border: "rgba(245,158,11,0.4)", text: "#4F46E5" };
+  if (diff <= 7) return { label: `J-${diff}`, bg: "rgba(79,70,229,0.08)", border: "rgba(79,70,229,0.2)", text: "#4F46E5" };
   return null;
 }
 
@@ -301,7 +301,7 @@ export default function AOsPage() {
                           <button
                             onClick={() => updateStatut(row.id, "interessant")}
                             className="px-2 py-1 rounded text-xs font-medium transition-all"
-                            style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#059669", cursor: "pointer" }}
+                            style={{ background: "rgba(79,70,229,0.08)", border: "1px solid rgba(79,70,229,0.2)", color: "#4F46E5", cursor: "pointer" }}
                             title="Intéressant"
                           >
                             ✓

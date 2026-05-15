@@ -143,12 +143,12 @@ function PlanContent({ plan, isPro }: { plan: typeof plans[0]; isPro: boolean })
             <span
               className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
               style={{
-                background: isPro ? "rgba(99,102,241,0.15)" : "rgba(34,197,94,0.1)",
-                border: isPro ? "1px solid rgba(99,102,241,0.3)" : "1px solid rgba(34,197,94,0.2)",
+                background: isPro ? "rgba(99,102,241,0.15)" : "rgba(79,70,229,0.08)",
+                border: isPro ? "1px solid rgba(99,102,241,0.3)" : "1px solid rgba(79,70,229,0.2)",
               }}
             >
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                <path d="M1.5 5l2.5 2.5L8.5 2.5" stroke={isPro ? "#A5B4FC" : "#4ADE80"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M1.5 5l2.5 2.5L8.5 2.5" stroke={isPro ? "#A5B4FC" : "#4F46E5"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
             {f}

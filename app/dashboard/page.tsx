@@ -81,13 +81,13 @@ export default async function DashboardPage() {
       {profile?.subscription_status === "trialing" && daysLeft !== null && daysLeft <= 14 && (
         <div
           className="mb-6 p-4 rounded-xl flex items-center justify-between gap-4"
-          style={{ background: "rgba(245,158,11,0.1)", border: "1px solid rgba(245,158,11,0.25)" }}
+          style={{ background: "rgba(79,70,229,0.08)", border: "1px solid rgba(79,70,229,0.2)" }}
         >
           <div className="flex items-center gap-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
-            <span className="text-sm font-medium" style={{ color: "#D97706" }}>
+            <span className="text-sm font-medium" style={{ color: "#4F46E5" }}>
               Votre essai gratuit expire dans <strong>{daysLeft} jour{daysLeft > 1 ? "s" : ""}</strong>.
             </span>
           </div>

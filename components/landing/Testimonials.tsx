@@ -49,7 +49,7 @@ export default function Testimonials() {
             >
               <div className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, k) => (
-                  <svg key={k} width="14" height="14" viewBox="0 0 14 14" fill="#F59E0B">
+                  <svg key={k} width="14" height="14" viewBox="0 0 14 14" fill="#4F46E5">
                     <path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z" />
                   </svg>
                 ))}

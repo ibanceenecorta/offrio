@@ -40,8 +40,8 @@ export default async function AbonnementPage() {
   const statusLabel = statusLabels[status || "trialing"] || "Inconnu";
 
   const statusColors: Record<string, string> = {
-    trialing: "#F59E0B",
-    active: "#22C55E",
+    trialing: "#4F46E5",
+    active: "#4F46E5",
     canceled: "#EF4444",
     past_due: "#EF4444",
   };
@@ -134,7 +134,7 @@ export default async function AbonnementPage() {
                 {p.features.map((f) => (
                   <li key={f} className="text-xs flex items-center gap-2" style={{ color: "var(--text-2)" }}>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                      <path d="M2 6l2.5 2.5 5.5-5" stroke="#22C55E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2 6l2.5 2.5 5.5-5" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                     {f}
                   </li>

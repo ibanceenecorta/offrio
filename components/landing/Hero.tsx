@@ -107,7 +107,7 @@ function EmailMockup() {
             </div>
             <span
               className="text-xs font-bold px-2 py-1 rounded-lg shrink-0"
-              style={{ background: "rgba(34,197,94,0.12)", color: "#059669", border: "1px solid rgba(34,197,94,0.2)" }}
+              style={{ background: "rgba(79,70,229,0.08)", color: "#4F46E5", border: "1px solid rgba(79,70,229,0.2)" }}
             >
               94/100
             </span>
@@ -130,7 +130,7 @@ function EmailMockup() {
             </div>
             <span
               className="text-xs font-bold px-2 py-1 rounded-lg shrink-0"
-              style={{ background: "rgba(245,158,11,0.12)", color: "#D97706", border: "1px solid rgba(245,158,11,0.2)" }}
+              style={{ background: "rgba(79,70,229,0.08)", color: "#4F46E5", border: "1px solid rgba(79,70,229,0.2)" }}
             >
               81/100
             </span>
@@ -187,7 +187,7 @@ export default function Hero() {
               >
                 <span
                   className="w-2 h-2 rounded-full shrink-0"
-                  style={{ background: "#22C55E", boxShadow: "0 0 6px rgba(34,197,94,0.6)", animation: "pulseGlow 2s infinite" }}
+                  style={{ background: "#4F46E5", boxShadow: "0 0 6px rgba(79,70,229,0.4)", animation: "pulseGlow 2s infinite" }}
                 />
                 Alimenté par l&apos;IA · Source BOAMP officielle
               </span>
