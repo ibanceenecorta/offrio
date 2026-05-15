@@ -56,10 +56,10 @@ export default async function DashboardPage() {
     : null;
 
   const stats = [
-    { label: "AOs cette semaine", value: totalAos ?? 0, color: "#4F46E5" },
-    { label: "Nouveaux", value: nouveauxAos ?? 0, color: "#4F46E5" },
-    { label: "Intéressants", value: interessants ?? 0, color: "#4F46E5" },
-    { label: "Score IA moyen", value: avgScoreValue ? `${avgScoreValue}/100` : "—", color: "#4F46E5" },
+    { label: "AOs cette semaine", value: totalAos ?? 0, color: "#0F0F1A" },
+    { label: "Nouveaux", value: nouveauxAos ?? 0, color: "#0F0F1A" },
+    { label: "Intéressants", value: interessants ?? 0, color: "#0F0F1A" },
+    { label: "Score IA moyen", value: avgScoreValue ? `${avgScoreValue}/100` : "—", color: "#EF4444" },
   ];
 
   const scoreClass = (score: number) =>
