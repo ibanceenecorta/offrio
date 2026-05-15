@@ -39,7 +39,7 @@ export default function Features() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Comment ça marche
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "var(--text)", letterSpacing: "-0.01em" }}>
             4 étapes, zéro effort
           </h2>
         </div>
@@ -55,7 +55,7 @@ export default function Features() {
                   >
                     {s.step}
                   </span>
-                  <h3 className="font-bold text-base" style={{ color: "#F0F4FF" }}>{s.title}</h3>
+                  <h3 className="font-bold text-base" style={{ color: "var(--text)" }}>{s.title}</h3>
                 </div>
                 <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--text-2)" }}>
                   {s.desc}

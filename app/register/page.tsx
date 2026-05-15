@@ -76,14 +76,14 @@ function RegisterForm() {
       style={{ background: "var(--bg)" }}
     >
       {/* Logo */}
-      <Link href="/" className="font-heading text-2xl mb-8" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+      <Link href="/" className="font-heading text-2xl mb-8" style={{ color: "var(--text)", letterSpacing: "0.18em" }}>
         OFFRIO
       </Link>
 
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold mb-2" style={{ color: "#F1F5F9" }}>
+          <h1 className="text-2xl font-bold mb-2" style={{ color: "var(--text)" }}>
             Créer un compte
           </h1>
           <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -219,7 +219,7 @@ function RegisterForm() {
 
         <p className="text-center text-sm mt-6" style={{ color: "var(--text-2)" }}>
           Déjà un compte ?{" "}
-          <Link href="/login" style={{ color: "#93C5FD", fontWeight: 600 }}>
+          <Link href="/login" style={{ color: "var(--accent)", fontWeight: 600 }}>
             Se connecter
           </Link>
         </p>

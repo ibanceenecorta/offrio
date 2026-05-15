@@ -95,7 +95,7 @@ export default function ParametresPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+        <h1 className="font-heading text-3xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
           PARAMÈTRES
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -106,7 +106,7 @@ export default function ParametresPage() {
       <div className="max-w-2xl space-y-6">
         {/* Profile */}
         <div className="glass grad-border p-6">
-          <h2 className="font-semibold mb-5" style={{ color: "#F1F5F9" }}>Informations personnelles</h2>
+          <h2 className="font-semibold mb-5" style={{ color: "var(--text)" }}>Informations personnelles</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <div>
               <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: "var(--text-3)" }}>
@@ -154,7 +154,7 @@ export default function ParametresPage() {
 
         {/* Secteurs */}
         <div className="glass grad-border p-6">
-          <h2 className="font-semibold mb-5" style={{ color: "#F1F5F9" }}>Secteurs surveillés</h2>
+          <h2 className="font-semibold mb-5" style={{ color: "var(--text)" }}>Secteurs surveillés</h2>
           <div className="flex flex-wrap gap-2 mb-5">
             {SECTEURS.map((s) => {
               const selected = secteurs.includes(s);
@@ -191,7 +191,7 @@ export default function ParametresPage() {
 
         {/* Préférences */}
         <div className="glass grad-border p-6">
-          <h2 className="font-semibold mb-5" style={{ color: "#F1F5F9" }}>Préférences de notification</h2>
+          <h2 className="font-semibold mb-5" style={{ color: "var(--text)" }}>Préférences de notification</h2>
           <div className="mb-4">
             <label className="block text-xs font-semibold mb-1.5 uppercase tracking-wide" style={{ color: "var(--text-3)" }}>
               Fréquence des alertes email

@@ -83,16 +83,16 @@ export default function PerformancePage() {
   const kpiCards = [
     { label: "AOs reçus", value: kpis.recus, color: "#60A5FA", sub: "total" },
     { label: "AOs traités", value: kpis.traites, color: "#22C55E", sub: `${kpis.taux}% du total` },
-    { label: "Score IA moyen", value: kpis.score ? `${kpis.score}/100` : "—", color: "#A78BFA", sub: "pertinence" },
-    { label: "Dossiers envoyés", value: kpis.envoyes, color: "#FCD34D", sub: "candidatures" },
-    { label: "Marchés gagnés", value: kpis.gagnes, color: "#4ADE80", sub: `${kpis.tauxTransformation}% de taux` },
+    { label: "Score IA moyen", value: kpis.score ? `${kpis.score}/100` : "—", color: "var(--accent)", sub: "pertinence" },
+    { label: "Dossiers envoyés", value: kpis.envoyes, color: "#D97706", sub: "candidatures" },
+    { label: "Marchés gagnés", value: kpis.gagnes, color: "#059669", sub: `${kpis.tauxTransformation}% de taux` },
     { label: "CA potentiel", value: kpis.roiTotal > 0 ? `${kpis.roiTotal.toLocaleString("fr-FR")} €` : "—", color: "#34D399", sub: "montants gagnés" },
   ];
 
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+        <h1 className="font-heading text-3xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
           PERFORMANCE
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -121,7 +121,7 @@ export default function PerformancePage() {
           style={{ background: "linear-gradient(135deg, rgba(34,197,94,0.1) 0%, rgba(16,185,129,0.05) 100%)", border: "1px solid rgba(34,197,94,0.25)" }}>
           <div className="text-3xl">🏆</div>
           <div>
-            <p className="font-semibold" style={{ color: "#4ADE80" }}>
+            <p className="font-semibold" style={{ color: "#059669" }}>
               Tu as répondu à {kpis.envoyes} AO{kpis.envoyes > 1 ? "s" : ""}, gagné {kpis.gagnes} marché{kpis.gagnes > 1 ? "s" : ""}
               {kpis.roiTotal > 0 ? `, pour ${kpis.roiTotal.toLocaleString("fr-FR")} € de CA` : ""}.
             </p>
@@ -135,7 +135,7 @@ export default function PerformancePage() {
       {/* Funnel candidature */}
       {!loading && kpis.envoyes > 0 && (
         <div className="glass grad-border p-6 mb-8">
-          <h2 className="font-semibold text-sm mb-5" style={{ color: "#F1F5F9" }}>Funnel de candidature</h2>
+          <h2 className="font-semibold text-sm mb-5" style={{ color: "var(--text)" }}>Funnel de candidature</h2>
           <div className="flex items-center gap-2 flex-wrap">
             {[
               { label: "Intéressants", value: kpis.traites, color: "#6366F1" },
@@ -161,7 +161,7 @@ export default function PerformancePage() {
       {/* Chart */}
       <div className="glass grad-border p-6">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="font-semibold text-sm" style={{ color: "#F1F5F9" }}>AOs reçus vs traités — 30 derniers jours</h2>
+          <h2 className="font-semibold text-sm" style={{ color: "var(--text)" }}>AOs reçus vs traités — 30 derniers jours</h2>
           <div className="flex items-center gap-4 text-xs" style={{ color: "var(--text-2)" }}>
             <span className="flex items-center gap-1.5">
               <span className="w-3 h-3 rounded-sm" style={{ background: "#6366F1" }} />
@@ -219,7 +219,7 @@ export default function PerformancePage() {
                 style={{
                   background: "#1E293B",
                   border: "1px solid var(--border-2)",
-                  color: "#F1F5F9",
+                  color: "var(--text)",
                   top: 0,
                   left: `${(tooltip.idx / days.length) * 100}%`,
                   transform: "translateX(-50%)",
@@ -227,8 +227,8 @@ export default function PerformancePage() {
                 }}
               >
                 <div style={{ color: "var(--text-2)" }}>{days[tooltip.idx].label}</div>
-                <div style={{ color: "#818CF8" }}>Reçus : {days[tooltip.idx].recus}</div>
-                <div style={{ color: "#4ADE80" }}>Traités : {days[tooltip.idx].traites}</div>
+                <div style={{ color: "var(--accent)" }}>Reçus : {days[tooltip.idx].recus}</div>
+                <div style={{ color: "#059669" }}>Traités : {days[tooltip.idx].traites}</div>
               </div>
             )}
 

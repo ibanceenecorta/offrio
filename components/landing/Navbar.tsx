@@ -24,7 +24,7 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
         <div className="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-heading text-xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "0.08em" }}>
+            <span className="font-heading text-xl font-bold" style={{ color: "var(--text)", letterSpacing: "0.08em" }}>
               OFFRIO
             </span>
           </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
             </Link>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              style={{ background: "none", border: "none", cursor: "pointer", color: "#F1F5F9", padding: "8px" }}
+              style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text)", padding: "8px" }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {menuOpen ? (

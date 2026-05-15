@@ -52,7 +52,7 @@ export default async function AbonnementPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+        <h1 className="font-heading text-3xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
           ABONNEMENT
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -67,7 +67,7 @@ export default async function AbonnementPage() {
             <p className="text-xs font-semibold uppercase tracking-wide mb-1" style={{ color: "var(--text-3)" }}>
               Plan actuel
             </p>
-            <h2 className="font-heading text-2xl" style={{ color: "#F1F5F9", letterSpacing: "0.05em" }}>
+            <h2 className="font-heading text-2xl" style={{ color: "var(--text)", letterSpacing: "0.05em" }}>
               {currentPlan.name}
             </h2>
             <p className="text-sm mt-1" style={{ color: "var(--text-2)" }}>
@@ -124,10 +124,10 @@ export default async function AbonnementPage() {
               className="glass grad-border p-5 flex flex-col"
               style={p.highlight ? { background: "rgba(79,110,247,0.06)", borderColor: "rgba(79,110,247,0.3)" } : {}}
             >
-              <h4 className="font-heading text-xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.05em" }}>
+              <h4 className="font-heading text-xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.05em" }}>
                 {p.name}
               </h4>
-              <p className="font-heading text-2xl mb-3" style={{ color: "#93B4FF" }}>
+              <p className="font-heading text-2xl mb-3" style={{ color: "var(--accent)" }}>
                 {p.price}€<span className="text-sm font-normal" style={{ color: "var(--text-3)" }}>/mois</span>
               </p>
               <ul className="space-y-1.5 flex-1 mb-4">

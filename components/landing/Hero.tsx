@@ -34,7 +34,7 @@ function Counter({ target, suffix }: { target: number; suffix: string }) {
   }, [target]);
 
   return (
-    <span ref={ref} className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+    <span ref={ref} className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "var(--text)", letterSpacing: "-0.01em" }}>
       {value.toLocaleString("fr-FR")}{suffix}
     </span>
   );
@@ -76,7 +76,7 @@ function EmailMockup() {
             <div className="flex items-center gap-2">
               <div
                 className="font-heading text-base font-bold"
-                style={{ color: "#F0F4FF", letterSpacing: "0.15em" }}
+                style={{ color: "var(--text)", letterSpacing: "0.15em" }}
               >
                 OFFRIO
               </div>
@@ -98,7 +98,7 @@ function EmailMockup() {
         <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--border)" }}>
           <div className="flex items-start justify-between gap-3 mb-2">
             <div className="flex-1">
-              <p className="text-xs font-semibold mb-1" style={{ color: "#F0F4FF" }}>
+              <p className="text-xs font-semibold mb-1" style={{ color: "var(--text)" }}>
                 Rénovation toiture — Mairie de Lyon
               </p>
               <p className="text-xs" style={{ color: "var(--text-2)" }}>
@@ -107,7 +107,7 @@ function EmailMockup() {
             </div>
             <span
               className="text-xs font-bold px-2 py-1 rounded-lg shrink-0"
-              style={{ background: "rgba(34,197,94,0.12)", color: "#4ADE80", border: "1px solid rgba(34,197,94,0.2)" }}
+              style={{ background: "rgba(34,197,94,0.12)", color: "#059669", border: "1px solid rgba(34,197,94,0.2)" }}
             >
               94/100
             </span>
@@ -121,7 +121,7 @@ function EmailMockup() {
         <div style={{ padding: "14px 20px", borderBottom: "1px solid var(--border)" }}>
           <div className="flex items-start justify-between gap-3 mb-2">
             <div className="flex-1">
-              <p className="text-xs font-semibold mb-1" style={{ color: "#F0F4FF" }}>
+              <p className="text-xs font-semibold mb-1" style={{ color: "var(--text)" }}>
                 Étanchéité bâtiments industriels
               </p>
               <p className="text-xs" style={{ color: "var(--text-2)" }}>
@@ -130,7 +130,7 @@ function EmailMockup() {
             </div>
             <span
               className="text-xs font-bold px-2 py-1 rounded-lg shrink-0"
-              style={{ background: "rgba(245,158,11,0.12)", color: "#FCD34D", border: "1px solid rgba(245,158,11,0.2)" }}
+              style={{ background: "rgba(245,158,11,0.12)", color: "#D97706", border: "1px solid rgba(245,158,11,0.2)" }}
             >
               81/100
             </span>
@@ -196,7 +196,7 @@ export default function Hero() {
             {/* Headline */}
             <h1
               className="font-heading anim-fadeUp d-2 leading-none mb-6"
-              style={{ fontSize: "clamp(44px, 6.5vw, 76px)", color: "#FAFAFA", letterSpacing: "-0.01em", fontWeight: 800 }}
+              style={{ fontSize: "clamp(44px, 6.5vw, 76px)", color: "var(--text)", letterSpacing: "-0.01em", fontWeight: 800 }}
             >
               Ne ratez plus<br />
               <span className="text-gradient-blue">aucun appel</span><br />

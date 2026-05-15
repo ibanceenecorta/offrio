@@ -62,7 +62,7 @@ export default function HistoriquePage() {
     <div>
       <div className="flex items-start justify-between mb-8 gap-4">
         <div>
-          <h1 className="font-heading text-3xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+          <h1 className="font-heading text-3xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
             HISTORIQUE
           </h1>
           <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -73,7 +73,7 @@ export default function HistoriquePage() {
           <button
             onClick={effacerTout}
             className="btn-secondary flex-shrink-0"
-            style={{ borderColor: "rgba(239,68,68,0.3)", color: "#F87171" }}
+            style={{ borderColor: "rgba(239,68,68,0.3)", color: "#DC2626" }}
           >
             Effacer tout
           </button>
@@ -90,7 +90,7 @@ export default function HistoriquePage() {
         ) : rows.length === 0 ? (
           <div className="py-16 text-center">
             <div className="text-4xl mb-3">🗂</div>
-            <p className="font-semibold mb-1" style={{ color: "#F1F5F9" }}>Aucun AO ignoré</p>
+            <p className="font-semibold mb-1" style={{ color: "var(--text)" }}>Aucun AO ignoré</p>
             <p className="text-sm" style={{ color: "var(--text-2)" }}>
               Les AOs que vous ignorez apparaîtront ici.
             </p>

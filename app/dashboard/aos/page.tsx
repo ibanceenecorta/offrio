@@ -186,7 +186,7 @@ export default function AOsPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+        <h1 className="font-heading text-3xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
           MES APPELS D&apos;OFFRES
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -227,7 +227,7 @@ export default function AOsPage() {
         ) : filtered.length === 0 ? (
           <div className="py-16 text-center">
             <div className="text-4xl mb-3">📭</div>
-            <p className="font-semibold mb-1" style={{ color: "#F1F5F9" }}>Aucun AO dans cette catégorie</p>
+            <p className="font-semibold mb-1" style={{ color: "var(--text)" }}>Aucun AO dans cette catégorie</p>
             <p className="text-sm" style={{ color: "var(--text-2)" }}>Modifiez le filtre pour voir d&apos;autres résultats.</p>
           </div>
         ) : (
@@ -251,7 +251,7 @@ export default function AOsPage() {
                   return (
                     <tr key={row.id} style={{ cursor: "pointer" }} onClick={() => openModal(row)}>
                       <td>
-                        <span className="font-medium text-sm" style={{ color: "#F1F5F9" }}>
+                        <span className="font-medium text-sm" style={{ color: "var(--text)" }}>
                           {ao?.titre?.length > 40 ? ao.titre.slice(0, 40) + "…" : ao?.titre}
                         </span>
                         <div className="sm:hidden mt-1 flex gap-1 flex-wrap">
@@ -301,7 +301,7 @@ export default function AOsPage() {
                           <button
                             onClick={() => updateStatut(row.id, "interessant")}
                             className="px-2 py-1 rounded text-xs font-medium transition-all"
-                            style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#4ADE80", cursor: "pointer" }}
+                            style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.2)", color: "#059669", cursor: "pointer" }}
                             title="Intéressant"
                           >
                             ✓
@@ -309,7 +309,7 @@ export default function AOsPage() {
                           <button
                             onClick={() => updateStatut(row.id, "ignore")}
                             className="px-2 py-1 rounded text-xs font-medium transition-all"
-                            style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)", color: "#F87171", cursor: "pointer" }}
+                            style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.2)", color: "#DC2626", cursor: "pointer" }}
                             title="Ignorer"
                           >
                             ✕
@@ -338,7 +338,7 @@ export default function AOsPage() {
           >
             {/* Header */}
             <div className="flex items-start justify-between gap-4 mb-4">
-              <h2 className="font-bold text-lg leading-tight" style={{ color: "#F1F5F9" }}>
+              <h2 className="font-bold text-lg leading-tight" style={{ color: "var(--text)" }}>
                 {selected.ao?.titre}
               </h2>
               <button

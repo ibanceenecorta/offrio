@@ -35,7 +35,7 @@ export default function Testimonials() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Témoignages
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "var(--text)", letterSpacing: "-0.01em" }}>
             Ils utilisent OFFRIO
           </h2>
         </div>
@@ -65,7 +65,7 @@ export default function Testimonials() {
                   {t.initials}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-semibold truncate" style={{ color: "#FAFAFA" }}>{t.name}</div>
+                  <div className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>{t.name}</div>
                   <div className="text-xs truncate" style={{ color: "var(--text-3)" }}>{t.role}</div>
                 </div>
                 <span className="score-high text-xs flex-shrink-0">{t.score}</span>

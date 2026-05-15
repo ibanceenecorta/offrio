@@ -56,13 +56,13 @@ export default function LoginPage() {
       className="min-h-screen flex flex-col items-center justify-center px-4 py-12"
       style={{ background: "var(--bg)" }}
     >
-      <Link href="/" className="font-heading text-2xl mb-8" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+      <Link href="/" className="font-heading text-2xl mb-8" style={{ color: "var(--text)", letterSpacing: "0.18em" }}>
         OFFRIO
       </Link>
 
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold mb-2" style={{ color: "#F1F5F9" }}>
+          <h1 className="text-2xl font-bold mb-2" style={{ color: "var(--text)" }}>
             Connexion
           </h1>
           <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -139,7 +139,7 @@ export default function LoginPage() {
 
         <p className="text-center text-sm mt-6" style={{ color: "var(--text-2)" }}>
           Pas encore de compte ?{" "}
-          <Link href="/register" style={{ color: "#93C5FD", fontWeight: 600 }}>
+          <Link href="/register" style={{ color: "var(--accent)", fontWeight: 600 }}>
             Essai gratuit 14 jours
           </Link>
         </p>

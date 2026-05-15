@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <span className="font-heading text-xl" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+            <span className="font-heading text-xl" style={{ color: "var(--text)", letterSpacing: "0.18em" }}>
               OFFRIO
             </span>
             <p className="text-sm mt-1" style={{ color: "var(--text-3)" }}>

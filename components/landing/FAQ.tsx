@@ -37,7 +37,7 @@ export default function FAQ() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             FAQ
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "var(--text)", letterSpacing: "-0.01em" }}>
             Questions fréquentes
           </h2>
         </div>
@@ -54,7 +54,7 @@ export default function FAQ() {
                 className="w-full flex items-center justify-between p-5 text-left"
                 style={{ background: "transparent", border: "none", cursor: "pointer" }}
               >
-                <span className="font-semibold text-sm md:text-base pr-4" style={{ color: "#F0F4FF" }}>
+                <span className="font-semibold text-sm md:text-base pr-4" style={{ color: "var(--text)" }}>
                   {item.q}
                 </span>
                 <span

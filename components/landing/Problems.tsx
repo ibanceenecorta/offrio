@@ -38,7 +38,7 @@ export default function Problems() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Le problème
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: "var(--text)", letterSpacing: "-0.01em" }}>
             La réalité du terrain
           </h2>
         </div>
@@ -56,7 +56,7 @@ export default function Problems() {
               >
                 {p.icon}
               </div>
-              <h3 className="text-lg font-bold mb-3" style={{ color: "#F0F4FF" }}>
+              <h3 className="text-lg font-bold mb-3" style={{ color: "var(--text)" }}>
                 {p.title}
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-2)" }}>

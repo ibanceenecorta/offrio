@@ -59,7 +59,7 @@ export default async function DashboardPage() {
     { label: "AOs cette semaine", value: totalAos ?? 0, color: "#60A5FA" },
     { label: "Nouveaux", value: nouveauxAos ?? 0, color: "#22C55E" },
     { label: "Intéressants", value: interessants ?? 0, color: "#F59E0B" },
-    { label: "Score IA moyen", value: avgScoreValue ? `${avgScoreValue}/100` : "—", color: "#A78BFA" },
+    { label: "Score IA moyen", value: avgScoreValue ? `${avgScoreValue}/100` : "—", color: "var(--accent)" },
   ];
 
   const scoreClass = (score: number) =>
@@ -69,7 +69,7 @@ export default async function DashboardPage() {
     <div>
       {/* Header */}
       <div className="mb-8">
-        <h1 className="font-heading text-3xl mb-1" style={{ color: "#F0F4FF", letterSpacing: "0.04em" }}>
+        <h1 className="font-heading text-3xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
           TABLEAU DE BORD
         </h1>
         <p className="text-sm" style={{ color: "var(--text-2)" }}>
@@ -87,7 +87,7 @@ export default async function DashboardPage() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
-            <span className="text-sm font-medium" style={{ color: "#FCD34D" }}>
+            <span className="text-sm font-medium" style={{ color: "#D97706" }}>
               Votre essai gratuit expire dans <strong>{daysLeft} jour{daysLeft > 1 ? "s" : ""}</strong>.
             </span>
           </div>
@@ -114,14 +114,14 @@ export default async function DashboardPage() {
       {/* Recent AOs */}
       <div className="glass grad-border">
         <div className="flex items-center justify-between px-6 py-4" style={{ borderBottom: "1px solid var(--border)" }}>
-          <h2 className="font-semibold text-sm" style={{ color: "#F0F4FF" }}>Derniers appels d&apos;offres</h2>
-          <a href="/dashboard/aos" className="text-xs" style={{ color: "#93B4FF" }}>Voir tous →</a>
+          <h2 className="font-semibold text-sm" style={{ color: "var(--text)" }}>Derniers appels d&apos;offres</h2>
+          <a href="/dashboard/aos" className="text-xs" style={{ color: "var(--accent)" }}>Voir tous →</a>
         </div>
 
         {!userAos || userAos.length === 0 ? (
           <div className="py-16 text-center">
             <div className="text-4xl mb-3">📭</div>
-            <p className="font-semibold mb-1" style={{ color: "#F0F4FF" }}>Aucun AO pour le moment</p>
+            <p className="font-semibold mb-1" style={{ color: "var(--text)" }}>Aucun AO pour le moment</p>
             <p className="text-sm" style={{ color: "var(--text-2)" }}>
               Les AOs correspondant à votre profil apparaîtront ici.
             </p>
@@ -146,7 +146,7 @@ export default async function DashboardPage() {
                   return (
                     <tr key={row.id as string}>
                       <td>
-                        <span className="font-medium text-sm" style={{ color: "#F0F4FF" }}>
+                        <span className="font-medium text-sm" style={{ color: "var(--text)" }}>
                           {(ao.titre as string)?.length > 60
                             ? (ao.titre as string).slice(0, 60) + "…"
                             : (ao.titre as string)}

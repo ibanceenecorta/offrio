@@ -240,7 +240,7 @@ export default function OnboardingPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12" style={{ background: "var(--bg)" }}>
-      <Link href="/" className="font-heading text-2xl mb-10" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+      <Link href="/" className="font-heading text-2xl mb-10" style={{ color: "var(--text)", letterSpacing: "0.18em" }}>
         OFFRIO
       </Link>
 
@@ -248,7 +248,7 @@ export default function OnboardingPage() {
         {/* Progress */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-semibold" style={{ color: "#F1F5F9" }}>Étape {step} / 3</span>
+            <span className="text-sm font-semibold" style={{ color: "var(--text)" }}>Étape {step} / 3</span>
             <span className="text-xs" style={{ color: "var(--text-3)" }}>
               {step === 1 ? "Votre entreprise" : step === 2 ? "Vos secteurs" : "Votre plan"}
             </span>
@@ -262,7 +262,7 @@ export default function OnboardingPage() {
           {/* Step 1 */}
           {step === 1 && (
             <div className="anim-fadeUp">
-              <h2 className="font-heading text-2xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.06em" }}>VOTRE ENTREPRISE</h2>
+              <h2 className="font-heading text-2xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.06em" }}>VOTRE ENTREPRISE</h2>
               <p className="text-sm mb-6" style={{ color: "var(--text-2)" }}>Ces informations permettent à l&apos;IA de filtrer les AOs pertinents.</p>
 
               <div className="space-y-4">
@@ -329,7 +329,7 @@ export default function OnboardingPage() {
           {/* Step 2 */}
           {step === 2 && (
             <div className="anim-fadeUp">
-              <h2 className="font-heading text-2xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.06em" }}>VOS SECTEURS</h2>
+              <h2 className="font-heading text-2xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.06em" }}>VOS SECTEURS</h2>
               <p className="text-sm mb-6" style={{ color: "var(--text-2)" }}>Sélectionnez tous les secteurs qui correspondent à votre activité.</p>
 
               <div className="space-y-5">
@@ -387,7 +387,7 @@ export default function OnboardingPage() {
                       className="flex-1"
                       style={{ accentColor: "var(--accent)" }}
                     />
-                    <span className="text-sm font-bold w-28 text-right" style={{ color: "#F1F5F9" }}>
+                    <span className="text-sm font-bold w-28 text-right" style={{ color: "var(--text)" }}>
                       {step2.montant_min.toLocaleString("fr-FR")} €
                     </span>
                   </div>
@@ -402,7 +402,7 @@ export default function OnboardingPage() {
           {/* Step 3 */}
           {step === 3 && (
             <div className="anim-fadeUp">
-              <h2 className="font-heading text-2xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.06em" }}>VOTRE PLAN</h2>
+              <h2 className="font-heading text-2xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.06em" }}>VOTRE PLAN</h2>
               <p className="text-sm mb-6" style={{ color: "var(--text-2)" }}>14 jours gratuits · Sans carte bancaire · Résiliable à tout moment</p>
 
               <div className="space-y-3">
@@ -429,7 +429,7 @@ export default function OnboardingPage() {
                         </span>
                       )}
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-bold" style={{ color: "#F1F5F9" }}>{plan.name}</span>
+                        <span className="font-bold" style={{ color: "var(--text)" }}>{plan.name}</span>
                         <span className="font-heading text-xl" style={{ color: selected ? "#93C5FD" : "#F1F5F9" }}>
                           {plan.price}€<span className="text-sm font-normal" style={{ color: "var(--text-3)" }}>/mois</span>
                         </span>

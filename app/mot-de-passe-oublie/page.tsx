@@ -25,7 +25,7 @@ export default function MotDePasseOubliePage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12" style={{ background: "var(--bg)" }}>
-      <Link href="/" className="font-heading text-2xl mb-8" style={{ color: "#F1F5F9", letterSpacing: "0.18em" }}>
+      <Link href="/" className="font-heading text-2xl mb-8" style={{ color: "var(--text)", letterSpacing: "0.18em" }}>
         OFFRIO
       </Link>
 
@@ -34,7 +34,7 @@ export default function MotDePasseOubliePage() {
           {sent ? (
             <div className="text-center py-4">
               <div className="text-5xl mb-4">✉️</div>
-              <h2 className="font-heading text-2xl mb-2" style={{ color: "#F1F5F9" }}>Email envoyé !</h2>
+              <h2 className="font-heading text-2xl mb-2" style={{ color: "var(--text)" }}>Email envoyé !</h2>
               <p className="text-sm mb-6" style={{ color: "var(--text-2)" }}>
                 Vérifiez votre boîte mail pour réinitialiser votre mot de passe.
               </p>
@@ -44,7 +44,7 @@ export default function MotDePasseOubliePage() {
             </div>
           ) : (
             <>
-              <h1 className="font-heading text-2xl mb-1" style={{ color: "#F1F5F9", letterSpacing: "0.04em" }}>
+              <h1 className="font-heading text-2xl mb-1" style={{ color: "var(--text)", letterSpacing: "0.04em" }}>
                 MOT DE PASSE OUBLIÉ
               </h1>
               <p className="text-sm mb-6" style={{ color: "var(--text-2)" }}>

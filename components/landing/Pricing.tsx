@@ -52,7 +52,7 @@ export default function Pricing() {
           <p className="text-sm font-semibold tracking-widest uppercase mb-3 text-gradient-accent">
             Tarifs
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl mb-4 font-bold" style={{ color: "#FAFAFA", letterSpacing: "-0.01em" }}>
+          <h2 className="font-heading text-4xl md:text-5xl mb-4 font-bold" style={{ color: "var(--text)", letterSpacing: "-0.01em" }}>
             Simple et transparent
           </h2>
           <p style={{ color: "var(--text-2)" }}>14 jours gratuits · Sans carte bancaire · Résiliable à tout moment</p>
@@ -129,7 +129,7 @@ function PlanContent({ plan, isPro }: { plan: typeof plans[0]; isPro: boolean })
         <div className="flex items-end gap-1">
           <span
             className="font-heading text-5xl font-bold"
-            style={{ color: "#FAFAFA", lineHeight: 1, letterSpacing: "-0.02em" }}
+            style={{ color: "var(--text)", lineHeight: 1, letterSpacing: "-0.02em" }}
           >
             {plan.price}€
           </span>
