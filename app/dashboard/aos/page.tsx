@@ -204,7 +204,7 @@ export default function AOsPage() {
               onClick={() => setFilter(s.key)}
               className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all"
               style={{
-                background: filter === s.key ? "rgba(99,102,241,0.15)" : "rgba(30,41,59,0.5)",
+                background: filter === s.key ? "#EEF2FF" : "#F3F4F6",
                 border: `1px solid ${filter === s.key ? "rgba(99,102,241,0.4)" : "var(--border-2)"}`,
                 color: filter === s.key ? "#A5B4FC" : "var(--text-2)",
                 cursor: "pointer",
@@ -376,7 +376,7 @@ export default function AOsPage() {
             </div>
 
             {/* Suivi statut */}
-            <div className="mb-5 p-4 rounded-xl" style={{ background: "rgba(15,23,42,0.5)", border: "1px solid var(--border)" }}>
+            <div className="mb-5 p-4 rounded-xl" style={{ background: "#F3F4F6", border: "1px solid var(--border)" }}>
               <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: "var(--text-3)" }}>
                 Suivi de candidature
               </p>
@@ -390,7 +390,7 @@ export default function AOsPage() {
                       onClick={() => updateStatut(selected.id, s)}
                       className="text-xs px-3 py-1.5 rounded-lg font-medium transition-all"
                       style={{
-                        background: isActive ? cfg.bg : "rgba(30,41,59,0.5)",
+                        background: isActive ? cfg.bg : "#F3F4F6",
                         border: `1px solid ${isActive ? cfg.border : "var(--border-2)"}`,
                         color: isActive ? cfg.text : "var(--text-2)",
                         cursor: "pointer",
@@ -427,7 +427,7 @@ export default function AOsPage() {
             </div>
 
             {/* Tabs */}
-            <div className="flex gap-1 mb-4 p-1 rounded-lg" style={{ background: "rgba(15,23,42,0.5)", border: "1px solid var(--border)" }}>
+            <div className="flex gap-1 mb-4 p-1 rounded-lg" style={{ background: "#F3F4F6", border: "1px solid var(--border)" }}>
               {([
                 { key: "resume", label: "Résumé IA" },
                 { key: "draft", label: "Draft email" },
@@ -451,7 +451,7 @@ export default function AOsPage() {
 
             {/* Tab content */}
             {tab === "resume" && selected.ao?.resume_ia && (
-              <div className="p-4 rounded-xl" style={{ background: "rgba(15,23,42,0.6)", border: "1px solid var(--border)" }}>
+              <div className="p-4 rounded-xl" style={{ background: "#F3F4F6", border: "1px solid var(--border)" }}>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-2)" }}>
                   {selected.ao.resume_ia}
                 </p>
@@ -518,7 +518,7 @@ export default function AOsPage() {
                         {copied ? "✓ Copié !" : "Copier"}
                       </button>
                     </div>
-                    <div className="p-4 rounded-xl text-sm leading-relaxed" style={{ background: "rgba(15,23,42,0.6)", border: "1px solid var(--border)", color: "var(--text-2)", whiteSpace: "pre-wrap" }}>
+                    <div className="p-4 rounded-xl text-sm leading-relaxed" style={{ background: "#F3F4F6", border: "1px solid var(--border)", color: "var(--text-2)", whiteSpace: "pre-wrap" }}>
                       {memo}
                     </div>
                   </>

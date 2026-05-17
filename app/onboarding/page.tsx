@@ -347,9 +347,9 @@ export default function OnboardingPage() {
                           onClick={() => toggleSecteur(s)}
                           className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-150"
                           style={{
-                            background: selected ? "rgba(37,99,235,0.18)" : "rgba(30,41,59,0.6)",
-                            border: `1px solid ${selected ? "rgba(37,99,235,0.5)" : "var(--border-2)"}`,
-                            color: selected ? "#93C5FD" : "var(--text-2)",
+                            background: selected ? "#EEF2FF" : "#F3F4F6",
+                            border: `1px solid ${selected ? "#4F46E5" : "var(--border)"}`,
+                            color: selected ? "#4F46E5" : "var(--text)",
                             cursor: "pointer",
                           }}
                         >
@@ -415,8 +415,8 @@ export default function OnboardingPage() {
                       onClick={() => setStep3({ plan: plan.slug })}
                       className="w-full text-left p-4 rounded-xl transition-all duration-150 relative"
                       style={{
-                        background: selected ? "rgba(37,99,235,0.1)" : "rgba(30,41,59,0.5)",
-                        border: `1px solid ${selected ? "rgba(37,99,235,0.5)" : "var(--border-2)"}`,
+                        background: selected ? "#EEF2FF" : "#F9FAFB",
+                        border: `1px solid ${selected ? "#4F46E5" : "var(--border)"}`,
                         cursor: "pointer",
                       }}
                     >
@@ -430,13 +430,13 @@ export default function OnboardingPage() {
                       )}
                       <div className="flex items-center justify-between mb-2">
                         <span className="font-bold" style={{ color: "var(--text)" }}>{plan.name}</span>
-                        <span className="font-heading text-xl" style={{ color: selected ? "#93C5FD" : "#F1F5F9" }}>
+                        <span className="font-heading text-xl" style={{ color: selected ? "#4F46E5" : "var(--text)" }}>
                           {plan.price}€<span className="text-sm font-normal" style={{ color: "var(--text-3)" }}>/mois</span>
                         </span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {plan.features.map((f) => (
-                          <span key={f} className="text-xs px-2 py-0.5 rounded" style={{ background: "rgba(15,23,42,0.5)", color: "var(--text-2)" }}>
+                          <span key={f} className="text-xs px-2 py-0.5 rounded" style={{ background: "#E5E7EB", color: "var(--text)" }}>
                             {f}
                           </span>
                         ))}

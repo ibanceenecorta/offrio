@@ -149,7 +149,7 @@ export default function OutilsPage() {
             {result && (
               <div
                 className="p-4 rounded-xl"
-                style={{ background: "rgba(15,23,42,0.6)", border: `1px solid ${margeColor}33` }}
+                style={{ background: "#F3F4F6", border: `1px solid ${margeColor}33` }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-sm font-semibold" style={{ color: "var(--text-2)" }}>Marge nette estimée</span>
